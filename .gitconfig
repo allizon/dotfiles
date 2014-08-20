@@ -1,0 +1,76 @@
+[user]
+	name = Allen Holt
+	email = ajholt@gmail.com
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[credential]
+	helper = osxkeychain
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[diff]
+	tool = vimdiff
+	mnemonicprefix = true
+[merge]
+	tool = vimdiff
+	stat = true
+[difftool]
+	tool = vimdiff
+	prompt = false
+[github]
+	user = ajholt
+[alias]
+	; aa = add -A
+	a = add
+	aa = !git add -u && git add . && git status
+	amend = commit --amend
+	ci = commit --verbose
+	c = commit -m
+	co = checkout
+	cb = checkout -b
+	d = diff --ignore-all-space
+	dt = difftool --ignore-all-space
+	dc = diff --cached
+	filelog = log -u
+	fl = log -u
+	ir = !git rebase -i origin/master
+	l = log --oneline
+	lg = log --oneline --graph --decorate
+	; ls = show --pretty="format:" --name-only
+	; ls = diff-tree --no-commit-id --name-only -r
+	ls = diff-tree --name-only -r
+	p4r = p4 rebase
+	p4s = p4 submit
+	r = !git l -30
+	ra = !git r --all
+	rb = rebase
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbs = rebase --skip
+	rbi = rebase -i
+	rh = reset HEAD
+	rhh = reset --hard HEAD
+	s = status
+	sa = stash apply
+	sl = stash list
+	sp = stash pop
+	save = stash save
+	stash-unapply = !git stash show -p | git apply -R
+	undo = reset --soft HEAD@{1}
+	up = !git fetch origin && git rebase origin/master
+[core]
+	editor = /usr/local/Cellar/vim/7.4.253/bin/vim
+	whitespace = trailing-space,space-before-tab
+	excludesfile = ~/.gitignore
+[branch]
+	autosetupmerge = true
+[pull]
+	rebase = true
