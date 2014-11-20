@@ -5,6 +5,16 @@ alias vis="vi -S Session.vim"
 alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder"
 
 alias g='/usr/bin/git'
+alias rcop='rubocop --format simple'
+alias guard='bundle exec guard'
+alias rs='bin/rails server'
+alias rc='bin/rails console'
+alias tc='RAILS_ENV=test bin/rails console'
+alias rtest='time bin/rake test'
+
+alias pm='python manage.py'
+
+alias st3pack='cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User'
 
 alias md='mkdir -pv'
 
@@ -58,9 +68,9 @@ function p4e { p4 edit $1 && vi $1 }
 function p4r { p4 revert $1 }
 function p4d { p4 diff $1 }
 
-alias agent-ext='/usr/bin/ssh-add $HOME/.ssh/external/2014-06-17;'
-alias agent-int='/usr/bin/ssh-add $HOME/.ssh/internal/2014-06-17; /usr/bin/ssh-add $HOME/.ssh/govops/govops_lab_key_v2'
-alias agent-old='/usr/bin/ssh-add $HOME/.ssh/internal/2014-02-19; /usr/bin/ssh-add $HOME/.ssh/external/2014-02-19'
+alias agent-ext='/usr/bin/ssh-add $HOME/.ssh/external/2014-10-08;'
+alias agent-int='/usr/bin/ssh-add $HOME/.ssh/internal/2014-10-08; /usr/bin/ssh-add $HOME/.ssh/govops/govops_lab_key_v2'
+alias agent-old='/usr/bin/ssh-add $HOME/.ssh/internal/2014-06-17; /usr/bin/ssh-add $HOME/.ssh/external/2014-06-17'
 alias agent-wf='/usr/bin/ssh-add $HOME/.ssh/wf/id_rsa'
 
 # alias sshgen_external='ssh-keygen -t rsa -b 2048 -C "`whoami`-external-`date +%Y-%m-%d`" -f ~/.ssh/external/`date +%Y-%m-%d`'
@@ -73,6 +83,7 @@ function akakeygen {
   ssh-keygen -t rsa -b 2048 -C "`whoami`-$1-`date +%Y-%m-%d`" -f ~/.ssh/$1/`date +%Y-%m-%d`
 }
 
+alias startredis='redis-server /usr/local/etc/redis.conf'
 alias repost='/Applications/Postgres.app/Contents/MacOS/bin/pg_ctl restart -D ~/Library/Application\ Support/Postgres/var/ -m fast -s'
 alias pdb='psql portal'
 alias rake='bundle exec rake'
@@ -81,6 +92,9 @@ alias rkick='killit rails && rs -d'
 alias thin='bundle exec thin start -d -p 3001'
 
 alias z='zeus'
+alias ztest='RAILS_ENV=test time z rake test'
+# alias zspec='time z rake spec'
+alias zspec='time z rspec --color --format documentation'
 
 alias vdb='psql vulcan'
 alias v='cd ~/git/vulcan'
@@ -94,9 +108,9 @@ function p () {
   echo 'Switching to mcdn-portal '$1
   case $1 in
     rel)  cd ~/p4/releases;;
+    3.5)  cd ~/git/mcdn-portal-3.5/;;
     3.4)  cd ~/git/mcdn-portal-3.4/;;
     3.3)  cd ~/git/mcdn-portal-3.3/;;
-    3.2)  cd ~/git/mcdn-portal-3.2/;;
     "")   cd ~/git;;
     *)    cd ~/git;;
   esac
@@ -106,6 +120,8 @@ function pp4 () {
   echo 'Switching to mcdn-portal '$1
   case $1 in
     rel)  cd ~/p4/releases;;
+    3.5)  cd ~/p4/mcdn-portal-3.5/akamai/mcdn-portal;;
+    3.4)  cd ~/p4/mcdn-portal-3.4/akamai/mcdn-portal;;
     3.3)  cd ~/p4/mcdn-portal-3.3/akamai/mcdn-portal;;
     3.2)  cd ~/p4/mcdn-portal-3.2/akamai/mcdn-portal;;
   esac
@@ -114,4 +130,15 @@ function pp4 () {
 function killit () {
   # Kills any process that matches a regexp passed to it
   ps aux | ack -v "ack" | ack "$@" | awk '{print $2}' | xargs kill -9
+}
+
+# Set architecture flags
+export ARCHFLAGS="-arch x86_64"
+export PATH=/usr/local/bin:$PATH
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
+# cache pip-installed packages to avoid re-downloading
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+gpip(){
+   PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
