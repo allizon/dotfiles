@@ -1,8 +1,11 @@
 # Mac OSX aliases
-alias vi="/usr/local/Cellar/vim/7.4.253/bin/vim"
-alias vim="/usr/local/Cellar/vim/7.4.253/bin/vim"
+alias vi="/usr/local/Cellar/vim/7.4.488/bin/vim"
+alias vim="/usr/local/Cellar/vim/7.4.488/bin/vim"
 alias vis="vi -S Session.vim"
 alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder"
+
+# alias j="/usr/local/bin/autojump"
+[[ -s /Users/allen/.autojump/etc/profile.d/autojump.sh ]] && source /Users/allen/.autojump/etc/profile.d/autojump.sh
 
 alias g='/usr/bin/git'
 alias rcop='rubocop --format simple'
@@ -12,7 +15,19 @@ alias rc='bin/rails console'
 alias tc='RAILS_ENV=test bin/rails console'
 alias rtest='time bin/rake test'
 
+### HARMONIX
+# Python/Django aliases
 alias pm='python manage.py'
+alias ba=". bin/activate"
+alias sh+="pm shell_plus"
+alias rs+="pm runserver_plus 0.0.0.0:8000"
+alias db="pm dbshell"
+alias bantha="j bantha && ba"
+alias orion="cd ~/hmx/orion_www && ba"
+alias rb4eva="cd ~/hmx/rb4eva && ba"
+alias psql-dev='PGPASSWORD=RBq8utKDfBgu4b7q psql oriondev -Uoriondev -horion-dev.caf7vrrqkmdp.us-east-1.rds.amazonaws.com'
+
+### AKAMAI
 
 alias st3pack='cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User'
 
@@ -84,7 +99,9 @@ function akakeygen {
 }
 
 alias startredis='redis-server /usr/local/etc/redis.conf'
-alias repost='/Applications/Postgres.app/Contents/MacOS/bin/pg_ctl restart -D ~/Library/Application\ Support/Postgres/var/ -m fast -s'
+alias redis-dev='redis-cli -h orion-dev.dq2my3.0001.use1.cache.amazonaws.com'
+alias redis-prod='redis-cli -h rb-prod.dq2my3.ng.0001.use1.cache.amazonaws.com'
+alias repost='/Applications/Postgres.app/Contents/MacOS/Postgres restart -D ~/Library/Application\ Support/Postgres/var/ -m fast -s'
 alias pdb='psql portal'
 alias rake='bundle exec rake'
 alias rr='bundle exec rake routes'
@@ -140,5 +157,11 @@ export PIP_REQUIRE_VIRTUALENV=true
 # cache pip-installed packages to avoid re-downloading
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 gpip(){
-   PIP_REQUIRE_VIRTUALENV="" pip "$@"
+    PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
+
+export P4CONFIG=".perforce"
+export P4USER="allen.holt"
+export P4HOST="perforce:1666"
+export P4EDITOR="vi"
+export P4IGNORE=".pyc"
