@@ -1,5 +1,3 @@
-# TODO: Could use a script to automatically push this to git
-
 # Personal convenience scripts
 DROPBOX_DIR='~/Dropbox/scripts'
 alias wow-backup="$DROPBOX_DIR/wow-backup.zsh"
@@ -17,6 +15,7 @@ alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && kill
 alias j="/usr/local/bin/autojump"
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
+alias untar="tar -xzvf"
 alias rcop='rubocop --format simple'
 alias guard='bundle exec guard'
 alias gz='bundle exec guard -g zeus -c'

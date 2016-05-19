@@ -38,7 +38,7 @@
 	b = branch
 	bd = branch -D
 	bdr = push origin
-	ca = commit --amend
+	ca = !git aa && git ci -m $1
 	ci = commit --verbose
 	c = commit -m
 	co = checkout
@@ -83,7 +83,7 @@
 	rebase = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
