@@ -1,7 +1,9 @@
 # TODO: Could use a script to automatically push this to git
 
 # Personal convenience scripts
-alias wow-backup='~/Dropbox/WoW/wow-backup.sh'
+DROPBOX_DIR='~/Dropbox/scripts'
+alias wow-backup="$DROPBOX_DIR/wow-backup.zsh"
+alias dot-backup="$DROPBOX_DIR/backup-to-remote.zsh"
 
 # Mac OSX aliases - versions in Homebrew
 VIM_VERSION='7.4.979'
