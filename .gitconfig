@@ -1,11 +1,14 @@
 [user]
+	useconfigonly = true
 	name = Allen Holt
-	email = ajholt@gmail.com
+	email = alholt@akamai.com
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [credential]
 	helper = osxkeychain
+[http]
+	sslverify = false
 [color]
 	ui = auto
 [color "branch"]
@@ -32,6 +35,10 @@
 	a = add
 	aa = !git add -u && git add . && git status
 	amend = commit --amend
+	b = branch
+	bd = branch -D
+	bdr = push origin
+	ca = commit --amend
 	ci = commit --verbose
 	c = commit -m
 	co = checkout
@@ -67,7 +74,7 @@
 	undo = reset --soft HEAD@{1}
 	up = !git fetch origin && git rebase origin/master
 [core]
-	editor = /usr/local/Cellar/vim/7.4.253/bin/vim
+	editor = /usr/local/Cellar/vim/7.4.979/bin/vim
 	whitespace = trailing-space,space-before-tab
 	excludesfile = /Users/alholt/.gitignore
 [branch]
@@ -76,7 +83,13 @@
 	rebase = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[push]
+	default = matching
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
