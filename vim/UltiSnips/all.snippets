@@ -1,0 +1,29 @@
+# *** Moviegeekz ***
+snippet sotn "MG: Still of the Night"
+<div class="sotn" data-title="${1:TITLE}" data-year="${2:YEAR}" data-director="${3:DIRECTOR}" data-dp="${4:D.P.}">
+  [image]
+  ${5:<p class="link">Screenshot via <a href="http://www.cinemasquid.com/blu-ray/movies/screenshots">Cinema Squid</a>.</p>}
+  ${6:<p class="link">Screenshot via <a href="http://film-grab.com/">Beautiful Stills from Beautiful Films</a>.</p>}
+  ${7:<p>${8:EXTRA}</p>}
+</div>
+endsnippet
+
+snippet infobox "MG: Infobox"
+[infobox
+title="${1:TITLE}"
+year="${2:YEAR}"
+rating="${3:RATING}"
+director="${4:DIRECTOR}"
+writer="${5:WRITER}"
+starring="${6:STARRING}"
+imdb="${7:IMDB}"]
+endsnippet
+
+# *** Akamai ***
+snippet crev "Code review results"
+Code review results stored in CR ${0:CR}
+endsnippet
+
+snippet crminor "Code review - minor"
+Code review not needed - minor change
+endsnippet
