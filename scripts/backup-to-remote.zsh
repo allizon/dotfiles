@@ -30,7 +30,7 @@ cp -R $VIM_SOURCE/* $VIM_TARGET
 
 echo "Copying Sublime files..."
 cp -R $SUBLIME_SOURCE $SUBLIME_TARGET
-rm -rf $SUBLIME_TARGET/.git*
+rm -rf $SUBLIME_TARGET/.git/ # keep .gitignore
 
 echo "Copying Atom files..."
 cp -R $ATOM_SOURCE $ATOM_TARGET
