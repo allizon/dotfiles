@@ -1,8 +1,0 @@
-(function() {
-
-
-}).call(this);
-
-//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAiZmlsZSI6ICIiLAogICJzb3VyY2VSb290IjogIiIsCiAgInNvdXJjZXMiOiBbCiAgICAiL1VzZXJzL2FsaG9sdC8uYXRvbS9wYWNrYWdlcy9yYWlscy10cmFuc3BvcnRlci9zcGVjL2ZpeHR1cmVzL2FwcC9hc3NldHMvamF2YXNjcmlwdHMvc2hhcmVkL2NvbW1vbi5qcy5jb2ZmZWUiCiAgXSwKICAibmFtZXMiOiBbXSwKICAibWFwcGluZ3MiOiAiQUF1RXdCO0FBQUE7QUFBQSIKfQ==
-
-//# sourceURL=/Users/alholt/.atom/packages/rails-transporter/spec/fixtures/app/assets/javascripts/shared/common.js.coffee

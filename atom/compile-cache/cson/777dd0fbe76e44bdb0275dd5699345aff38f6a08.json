@@ -1,1 +1,0 @@
-{"context-menu":{"atom-text-editor":[{"label":"Toggle django-test-runner","command":"django-test-runner:toggle"}]},"menu":[{"label":"Packages","submenu":[{"label":"django-test-runner","submenu":[{"label":"run all tests","command":"django-test-runner:run-all-tests"}]}]}]}
