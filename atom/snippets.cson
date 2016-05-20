@@ -1,0 +1,60 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# https://atom.io/docs/latest/using-atom-basic-customization#cson
+
+'.source.python':
+   'Print value':
+      'prefix': 'pv'
+      'body': 'print ">> $1: {}${2:\\\\n}".format(str($1))'
+   'LOGGER.debug':
+      'prefix': 'ld'
+      'body': 'LOGGER.debug("$1: {}".format(str($1)))'
+   'LOGGER.info':
+      'prefix': 'lin'
+      'body': 'LOGGER.info("$1: {}".format(str($1)))'
+   'LOGGER.error':
+      'prefix': 'ler'
+      'body': 'LOGGER.error("$1: {}".format(str($1)))'
+   'for...each...':
+      'prefix': 'fe'
+      'body': 'for $1 in $2:\n\t$3'
+   'map':
+      'prefix': 'map'
+      'body': 'map(lambda ${1:var}: ${2:function}, ${3:collection})'
+
+
+'.source.ruby':
+   'Rails.logger.info':
+      'prefix': 'rli'
+      'body': 'Rails.logger.info("[AJ] $1: " + $1.inspect)'
+   'AwesomePrint':
+      'prefix': 'ap'
+      'body': 'ap \'$1: %s\' % $1'
+   'Test block':
+      'prefix': 'test'
+      'body': 'test \'$1\' do\n\t$2\nend'
+
+
+'.source.js':
+   'console.log()':
+      'prefix': 'clog'
+      'body': 'console.log($1);'
+

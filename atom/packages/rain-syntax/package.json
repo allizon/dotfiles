@@ -1,0 +1,34 @@
+{
+  "name": "rain-syntax",
+  "theme": "syntax",
+  "version": "1.0.2",
+  "description": "A calming syntax theme for Atom. Matches Rain UI.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nkpfstr/rain-syntax.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "readme": "# Rain Syntax\n\nA calming syntax theme for Atom. Made to match [Rain UI](https://github.com/nickpfisterer/rain-ui).\n\n![A screenshot of your theme](https://dl.dropboxusercontent.com/u/3106750/github/rain-ui-1.0.0.png)\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/nkpfstr/rain-syntax/issues"
+  },
+  "homepage": "https://github.com/nkpfstr/rain-syntax#readme",
+  "_id": "rain-syntax@1.0.2",
+  "_shasum": "a3539fae27566e984d2b516e2683e2e6c425cd14",
+  "_resolved": "file:../d-1151029-62666-m82yif/package.tgz",
+  "_from": "../d-1151029-62666-m82yif/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

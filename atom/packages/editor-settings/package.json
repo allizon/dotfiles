@@ -1,0 +1,107 @@
+{
+  "name": "editor-settings",
+  "main": "./lib/editor-settings",
+  "version": "1.0.4",
+  "description": "Editor settings per-language, extension and directory.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nirix/atom-editor-settings.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "editor",
+    "settings",
+    "syntax",
+    "grammar",
+    "language",
+    "project",
+    "directory",
+    "specific",
+    "context"
+  ],
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+    "cson-parser": "~1.0.0"
+  },
+  "readme": "# editor-settings package\n\nAdds support for per-language, file extension and directory editor settings.\n\n## How to use it\n\nThe language/grammar settings files are saved in the `grammar-config` directory located\nin the main Atom configuration directory with a lower-case file name format.\n\nFor example, the config file for CoffeeScript would be `coffeescript.cson`.\n\n### Supported settings\n\nThe API for setting editor settings currently only supports:\n\n- Tab length (tabLength)\n- Soft/hard tabs (softTabs)\n- Soft wrap (softWrap)\n- Encoding (encoding)\n\n### Example configuration\n\nThe following example is for CoffeeScript, it sets the tab length to `2`, but if\nthe file extension is `.cson` it sets it to `4`.\n\n    tabLength: 2\n    extensionConfig:\n      cson:\n        tabLength: 4\n\n#### Experimental settings:\n\n    fontFamily: 'Source Code Pro'\n    grammarConfig:\n      'GitHub Markdown':\n        fontFamily: 'monospace'\n\n\n#### Example project and directory configuration\n\nAll options not nested under a specific grammar are used for all grammar and extensions.\n\n    tabLength: 2\n    grammarConfig:\n      'PHP':\n        tabLength: 4\n        softTabs: true\n        extensionConfig:\n          phtml:\n            softTabs: false\n\n## Features\n\n- Per-language support\n- Per-file extension support\n- Per-project support\n- Per-directory support\n\n### Planned\n\n- Change configuration directory\n\nIf there is a feature you'd like added simply create an issue or fork and implement it and send a pull request.\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/nirix/atom-editor-settings/issues"
+  },
+  "homepage": "https://github.com/nirix/atom-editor-settings#readme",
+  "_id": "editor-settings@1.0.4",
+  "_shasum": "15adb021278b6d1a09caaa12c722ee811498b604",
+  "_resolved": "file:../d-115930-94974-jukgf8/package.tgz",
+  "_from": "../d-115930-94974-jukgf8/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "cson-parser",
+        "version": "1.0.9",
+        "path": "node_modules/cson-parser/lib/cson-parser.js"
+      },
+      {
+        "name": "coffee-script",
+        "version": "1.9.0",
+        "path": "node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/coffee-script.js"
+      }
+    ],
+    "extensions": {
+      ".coffee": [
+        "lib/editor-settings.coffee"
+      ],
+      ".js": [
+        "node_modules/cson-parser/lib/cson-parser.js",
+        "node_modules/cson-parser/lib/parse.js",
+        "node_modules/cson-parser/lib/stringify.js",
+        "node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/browser.js",
+        "node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/cake.js",
+        "node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/coffee-script.js",
+        "node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/command.js",
+        "node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/grammar.js",
+        "node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/helpers.js",
+        "node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/index.js",
+        "node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/lexer.js",
+        "node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/nodes.js",
+        "node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/optparse.js",
+        "node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/parser.js",
+        "node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/register.js",
+        "node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/repl.js",
+        "node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/rewriter.js",
+        "node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/scope.js",
+        "node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/sourcemap.js",
+        "node_modules/cson-parser/node_modules/coffee-script/register.js",
+        "node_modules/cson-parser/node_modules/coffee-script/repl.js"
+      ],
+      ".json": [
+        "node_modules/cson-parser/node_modules/coffee-script/bower.json",
+        "node_modules/cson-parser/node_modules/coffee-script/package.json",
+        "node_modules/cson-parser/package.json",
+        "package.json"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "lib",
+          ""
+        ],
+        "dependencies": {
+          "cson-parser": "~1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/cson-parser/lib",
+          "node_modules/cson-parser"
+        ],
+        "dependencies": {
+          "coffee-script": "1.9.0"
+        }
+      }
+    ]
+  }
+}
