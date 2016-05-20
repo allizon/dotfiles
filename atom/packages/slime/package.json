@@ -1,0 +1,38 @@
+{
+  "name": "slime",
+  "theme": "syntax",
+  "version": "1.6.1",
+  "description": "Colorful without being insane",
+  "keywords": [
+    "syntax",
+    "theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smlombardi/slime.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "readme": "# slime theme\n\nColorful without being too bright.  Ported from the Textmate theme \"slime\" with extensive edits. \n\nFont used in screenshots is Operator Mono.  Comments and variables are in italics.\n\n##HTML\n![](https://raw.githubusercontent.com/smlombardi/slime/master/images/html.png)\n\n\n##SCSS\n![](https://raw.githubusercontent.com/smlombardi/slime/master/images/scss.png)\n\n##JS\n![](https://raw.githubusercontent.com/smlombardi/slime/master/images/js.png)",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/smlombardi/slime/issues"
+  },
+  "homepage": "https://github.com/smlombardi/slime#readme",
+  "_id": "slime@1.6.1",
+  "_shasum": "ff976ad61164071ab5059997471d4866afbedc0c",
+  "_resolved": "file:../d-116125-39946-1eesw7d/package.tgz",
+  "_from": "../d-116125-39946-1eesw7d/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}
