@@ -33,8 +33,11 @@ cp -R $SUBLIME_SOURCE $SUBLIME_TARGET
 rm -rf $SUBLIME_TARGET/.git/ # keep .gitignore
 
 echo "Copying Atom files..."
-cp -R $ATOM_SOURCE $ATOM_TARGET
-rm -rf $ATOM_TARGET/.git/ # keep .gitignore
+cp $ATOM_SOURCE/.gitignore $ATOM_TARGET
+cp $ATOM_SOURCE/*.cson $ATOM_TARGET
+cp $ATOM_SOURCE/*.less $ATOM_TARGET
+cp -R $ATOM_SOURCE/grammar-config/ $ATOM_TARGET
+# rm -rf $ATOM_TARGET/.git/ # keep .gitignore
 
 echo "Pushing to remote..."
 git aa
