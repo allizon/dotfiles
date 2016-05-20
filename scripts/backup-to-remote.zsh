@@ -34,7 +34,7 @@ rm -rf $SUBLIME_TARGET/.git*
 
 echo "Copying Atom files..."
 cp -R $ATOM_SOURCE $ATOM_TARGET
-rm -rf $ATOM_TARGET/.git*
+rm -rf $ATOM_TARGET/.git/ # keep .gitignore
 
 echo "Pushing to remote..."
 git aa
