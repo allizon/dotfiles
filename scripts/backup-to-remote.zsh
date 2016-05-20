@@ -36,9 +36,7 @@ echo "Copying Atom files..."
 cp $ATOM_SOURCE/.gitignore $ATOM_TARGET
 cp $ATOM_SOURCE/*.(cson|less|coffee) $ATOM_TARGET
 cp -R $ATOM_SOURCE/grammar-config $ATOM_TARGET
-echo "cp -R $ATOM_SOURCE/grammar-config $ATOM_TARGET"
 cp -R $ATOM_SOURCE/packages $ATOM_TARGET
-# rm -rf $ATOM_TARGET/.git/ # keep .gitignore
 
 echo "Pushing to remote..."
 git aa
