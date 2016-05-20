@@ -1,0 +1,36 @@
+[
+  { "keys": ["ctrl+="], "command": "reindent", "args": { "single_line": false } },
+  { "keys": ["super+shift+space"], "command": "run_macro_file", "args": {"file": "Packages/User/add-spaces.sublime-macro"} },
+  { "keys": ["shift+delete"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
+  { "keys": ["shift+backspace"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
+  { "keys": ["super+down"], "command": "move", "args": {"by": "pages", "forward": true} },
+  { "keys": ["super+up"], "command": "move", "args": {"by": "pages", "forward": false} },
+  // { "keys": ["ctrl+alt+up"], "command": "scroll_lines", "args": {"amount": 1.0} },
+  { "keys": ["super+j"], "command": "auto_complete" },
+  { "keys": ["super+shift+j"], "command": "join_lines" },
+
+  { "keys": ["ctrl+9"], "command": "insert_snippet", "args": { "name": "Packages/User/parentheses.sublime-snippet" } },
+  { "keys": ["ctrl+'"], "command": "insert_snippet", "args": { "name": "Packages/User/single-quotes.sublime-snippet" } },
+  { "keys": ["ctrl+shift+'"], "command": "insert_snippet", "args": { "name": "Packages/User/double-quotes.sublime-snippet" } },
+  { "keys": ["ctrl+["], "command": "insert_snippet", "args": { "name": "Packages/User/brackets.sublime-snippet" } },
+  { "keys": ["ctrl+shift+["], "command": "insert_snippet", "args": { "name": "Packages/User/braces.sublime-snippet" } },
+  { "keys": ["ctrl+shift+`"], "command": "insert_snippet", "args": { "name": "Packages/User/backticks.sublime-snippet" } },
+
+  { "keys": ["j", "j"], "command": "exit_insert_mode",
+  "context":
+  [
+  { "key": "setting.command_mode", "operand": false },
+  { "key": "setting.is_widget", "operand": false }
+  ]
+  },
+  { "keys": [",", "W"], "command": "focus_neighboring_group", "args": {"forward": false}, "context":
+  [
+  { "key": "setting.command_mode", "operand": true },
+  { "key": "setting.is_widget", "operand": false }
+  ] },
+  { "keys": [",", "w"], "command": "focus_neighboring_group", "context":
+  [
+  { "key": "setting.command_mode", "operand": true },
+  { "key": "setting.is_widget", "operand": false }
+  ] }
+  ]

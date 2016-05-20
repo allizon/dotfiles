@@ -1,0 +1,33 @@
+{
+	"auto_complete": true,
+	"auto_complete_commit_on_tab": false,
+	"color_scheme": "Packages/Theme - Hero/Hero Dark Eighties.tmTheme",
+	"find_selected_text": true,
+	"font_face": "InputMono",
+	"font_size": 10,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"SimpleSync",
+		"Theme - Aqua",
+		"vintage"
+	],
+	"line_padding_bottom": 6,
+	"match_selection": true,
+	"phoenix_color_blue": true,
+	"phoenix_eighties": true,
+	"phoenix_solid_current_tab": true,
+	"phoenix_tabs_small": true,
+	"rulers":
+	[
+		80,
+		120
+	],
+	"tab_size": 2,
+	"theme": "Hero Dark.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"vintage_start_in_command_mode": true,
+	"word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
+	"word_wrap": false
+}

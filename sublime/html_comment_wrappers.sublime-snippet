@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+<!----- $1 -->
+  $0
+<!----- /$1 -->
+]]></content>
+  <tabTrigger>hc</tabTrigger>
+  <scope>text.html.basic,text.html.ruby</scope>
+</snippet>

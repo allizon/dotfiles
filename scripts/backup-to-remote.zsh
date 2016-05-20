@@ -10,6 +10,8 @@ VIM_TARGET="$DOTFILES_DIR/vim/"
 VIM_SOURCE="$HOME_DIR/.vim/"
 ATOM_SOURCE="$HOME_DIR/.atom/"
 ATOM_TARGET="$DOTFILES_DIR/atom/"
+SUBLIME_SOURCE="$HOME_DIR//Library/Application Support/Sublime Text 3/Packages/User/"
+SUBLIME_TARGET="$DOTFILES_DIR/sublime/"
 
 echo "Copying scripts..."
 cp $DROPBOX_DIR/* $DOTFILES_DIR/scripts/
@@ -25,7 +27,10 @@ cp $HOME_DIR/.zshrc $ZSH_TARGET
 echo "Copying Vim files..."
 cp $HOME_DIR/.vimrc $VIM_TARGET
 cp -R $VIM_SOURCE/* $VIM_TARGET
-ls -la $VIM_TARGET
+
+echo "Copying Sublime files..."
+cp -R $SUBLIME_SOURCE $SUBLIME_TARGET
+rm -rf $SUBLIME_TARGET/.git*
 
 echo "Copying Atom files..."
 cp -R $ATOM_SOURCE $ATOM_TARGET

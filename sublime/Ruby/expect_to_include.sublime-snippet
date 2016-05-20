@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+expect($1).$2to include($3)
+]]></content>
+  <description>expect...to include() (Rspec)</description>
+  <tabTrigger>exinc</tabTrigger>
+  <scope>source.ruby</scope>
+</snippet>

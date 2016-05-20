@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+\$( ${1:array} ).each( function ( i, e ) {
+  $2
+} );
+]]></content>
+	<tabTrigger>jqeach</tabTrigger>
+	<scope>source.js</scope>
+	<description>jQuery:Each (array iteration)</description>
+</snippet>

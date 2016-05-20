@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[
+class="${1:what}"
+]]></content>
+	<tabTrigger>cl</tabTrigger>
+</snippet>

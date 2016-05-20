@@ -1,0 +1,17 @@
+[
+    { "keys": ["ctrl+shift+t"], "command": "unexpand_tabs" },
+    { "keys": ["ctrl+="], "command": "reindent" },
+	{ "keys": ["ctrl+shift+space"], "command": "run_macro_file", "args": {"file": "Packages/User/add-spaces.sublime-macro"} },
+	{ "keys": ["f8"],
+		"command": "repl_open",
+         "caption": "Python",
+         "mnemonic": "p",
+         "args": {
+            "type": "subprocess",
+            "encoding": "utf8",
+            "cmd": ["python", "-i", "-u", "$file"],
+            "cwd": "$file_path",
+            "syntax": "Packages/Python/Python.tmLanguage",
+            "external_id": "python"
+        } }
+]

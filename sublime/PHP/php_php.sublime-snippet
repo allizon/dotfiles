@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+<?${1:php} $2 ?>
+]]></content>
+	<tabTrigger>php</tabTrigger>
+	<scope>text.html - source.php</scope>
+	<description>PHP Tags</description>
+</snippet>

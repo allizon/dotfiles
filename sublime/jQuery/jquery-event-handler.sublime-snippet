@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+\$( '#${1:element}' ).${2:event}( function ( e, v ) {
+	$3
+} );
+]]></content>
+	<tabTrigger>jqhandler</tabTrigger>
+	<scope>source.js</scope>
+	<description>jQuery:Event Handler</description>
+</snippet>

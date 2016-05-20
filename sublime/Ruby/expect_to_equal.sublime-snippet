@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+expect($1).$2to eql($3)
+]]></content>
+  <description>expect...to eql() (Rspec)</description>
+  <tabTrigger>ex=</tabTrigger>
+  <scope>source.ruby</scope>
+</snippet>

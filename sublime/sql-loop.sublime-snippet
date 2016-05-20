@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+FOR r IN
+	${1:SQL}
+LOOP
+	RETURN NEXT r;
+END LOOP;
+
+RETURN;
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>loop</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sql</scope>
+</snippet>

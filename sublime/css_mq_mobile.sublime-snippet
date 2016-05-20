@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+@media screen and (max-width: 500px) {
+	${1:$SELECTION}
+}
+]]></content>
+	<tabTrigger>mqm</tabTrigger>
+	<source>source.css</source>
+</snippet>

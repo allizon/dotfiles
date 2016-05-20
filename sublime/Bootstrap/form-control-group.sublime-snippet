@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+<div class="control-group">
+	<label for="" class="control-label">$1</label>
+	<div class="controls">
+		$2
+	</div>
+</div>
+]]></content>
+	<tabTrigger>bs:form:cg</tabTrigger>
+	<scope>text.html</scope>
+	<description>Bootstrap:Form Control Group</description>
+</snippet>

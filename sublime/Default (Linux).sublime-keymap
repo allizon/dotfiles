@@ -1,0 +1,28 @@
+[
+  { "keys": ["ctrl+f"], "command": "move", "args": {"by": "pages", "forward": true} },
+  { "keys": ["ctrl+b"], "command": "move", "args": {"by": "pages", "forward": false} },
+  { "keys": ["ctrl+="], "command": "reindent" },
+  { "keys": ["ctrl+shift+space"], "command": "run_macro_file", "args": {"file": "Packages/User/add-spaces.sublime-macro"} },
+  { "keys": ["super+shift+space"], "command": "run_macro_file", "args": {"file": "Packages/User/add-spaces.sublime-macro"} },
+  { "keys": ["shift+delete"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
+  { "keys": ["shift+backspace"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
+  { "keys": ["ctrl+j"], "command": "auto_complete" },
+  { "keys": ["ctrl+shift+j"], "command": "join_lines" },
+  { "keys": ["j", "j"], "command": "exit_insert_mode",
+  "context":
+  [
+    { "key": "setting.command_mode", "operand": false },
+    { "key": "setting.is_widget", "operand": false }
+  ]
+},
+  { "keys": [",", "W"], "command": "focus_neighboring_group", "args": {"forward": false}, "context":
+  [
+    { "key": "setting.command_mode", "operand": true },
+    { "key": "setting.is_widget", "operand": false }
+  ] },
+  { "keys": [",", "w"], "command": "focus_neighboring_group", "context":
+  [
+    { "key": "setting.command_mode", "operand": true },
+    { "key": "setting.is_widget", "operand": false }
+  ] }
+]

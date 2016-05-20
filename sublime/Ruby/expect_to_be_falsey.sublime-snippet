@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+expect($1).$2to be_falsey
+]]></content>
+  <description>expect...to be_falsey (Rspec)</description>
+  <tabTrigger>exf</tabTrigger>
+  <scope>source.ruby</scope>
+</snippet>

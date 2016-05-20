@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+/**
+ * Description.
+ *
+ * @return
+ */
+function ${1:$SELECTION} ( ${2:args} ) {
+	${3:// body}
+}
+]]></content>
+	<tabTrigger>func</tabTrigger>
+	<scope>source.php</scope>
+	<description>New PHP function</description>
+</snippet>

@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+try
+{
+	${1:$SELECTION}
+}
+catch ( ${2:Exception} \$ex )
+{
+	$3
+}
+]]></content>
+	<tabTrigger>tc</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

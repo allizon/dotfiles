@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+<div class="sotn" data-title="${1:TITLE}" data-year="${2:YEAR}" data-director="${3:DIRECTOR}" data-dp="${4:D.P.}">
+  [image]
+  ${5:<p class="link">Screenshot via <a href="http://www.cinemasquid.com/blu-ray/movies/screenshots">Cinema Squid</a>.</p>}
+  ${6:<p class="link">Screenshot via <a href="http://film-grab.com/">Beautiful Stills from Beautiful Films</a>.</p>}
+  ${7:<p>${8:EXTRA}</p>}
+</div>
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>sotn</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope>source.python</scope> -->
+</snippet>

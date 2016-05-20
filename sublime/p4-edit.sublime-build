@@ -1,0 +1,7 @@
+{
+  "cmd": ["p4", "edit", "$file"],
+  "shell": "true",
+  "env": {
+    "P4CONFIG": "alholt",
+  }
+}

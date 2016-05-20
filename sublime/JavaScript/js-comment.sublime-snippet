@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+/* ${1:comment} */
+]]></content>
+  <tabTrigger>jsc</tabTrigger>
+  <scope>source.js</scope>
+  <description>JavaScript Comment Block</description>
+</snippet>

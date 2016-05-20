@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+<label for="$1" class="checkbox">
+  <input type="checkbox" id="$1"> $2
+</label>
+]]></content>
+  <tabTrigger>bscheckbox</tabTrigger>
+  <!--scope>text.html.basic,text.html.ruby</scope-->
+  <description>Bootstrap:Checkbox</description>
+</snippet>

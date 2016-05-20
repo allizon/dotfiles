@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+expect(page).to have_content($1)
+]]></content>
+  <description>expect...have_content (Rspec)</description>
+  <tabTrigger>exphc</tabTrigger>
+  <scope>source.ruby</scope>
+</snippet>

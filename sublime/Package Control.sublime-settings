@@ -1,0 +1,31 @@
+{
+	"auto_upgrade_last_run": null,
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+		"Theme - Aqua"
+	],
+	"installed_packages":
+	[
+		"BracketHighlighter",
+		"Clipboard Manager",
+		"Emmet",
+		"GitGutter",
+		"JSHint Gutter",
+		"LineEndings",
+		"Local History",
+		"Package Control",
+		"RuboCop",
+		"ScopeAlways",
+		"SideBarEnhancements",
+		"SimpleSync",
+		"Solarized Color Scheme",
+		"SublimeGit",
+		"SublimeREPL",
+		"Theme - Aqua",
+		"Theme - Hero",
+		"Theme - Phoenix",
+		"Theme - Soda",
+		"WordCount"
+	]
+}

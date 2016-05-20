@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+try
+  $1
+catch $2
+
+end
+]]></content>
+  <tabTrigger>try</tabTrigger>
+  <scope>source.ruby</scope>
+  <description>Ruby: try...catch</description>
+</snippet>

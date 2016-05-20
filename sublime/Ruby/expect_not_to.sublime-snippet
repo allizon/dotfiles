@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+expect($1).not_to $2
+]]></content>
+  <description>expect...to (Rspec)</description>
+  <tabTrigger>exnto</tabTrigger>
+  <scope>source.ruby</scope>
+</snippet>

@@ -1,0 +1,12 @@
+{
+	"auto_complete": true,
+	"color_scheme": "Packages/TextMate-Tomorrow-Theme/Tomorrow-Night.tmTheme",
+	"font_face": "Courier 10 Pitch",
+	"font_size": 11,
+	"highlight_line": true,
+	"tab_size": 4,
+	"translate_tabs_to_spaces": false,
+	"trim_trailing_white_space_on_save": true,
+	"vintage_start_in_command_mode": true,
+	"word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?"
+}

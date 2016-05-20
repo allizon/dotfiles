@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+<%= javascript_include_tag '$1' %>
+]]></content>
+  <description>javascript_include_tag (Rails)</description>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>jsinc</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>text.html.ruby</scope>
+</snippet>

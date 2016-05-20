@@ -1,0 +1,9 @@
+[
+	{
+		"args":
+		{
+			"name": "Packages/User/markdown_italic.sublime-snippet"
+		},
+		"command": "insert_snippet"
+	}
+]
