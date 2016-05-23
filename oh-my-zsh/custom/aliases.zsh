@@ -3,6 +3,10 @@ DROPBOX_DIR='~/Dropbox/scripts'
 alias wow-backup="$DROPBOX_DIR/wow-backup.zsh"
 alias dot-backup="$DROPBOX_DIR/backup-to-remote.zsh"
 
+CURRENT_EDITOR='atom'
+# CURRENT_EDITOR='vim'
+# CURRENT_EDITOR='subl'
+
 # Mac OSX aliases - versions in Homebrew
 VIM_VERSION='7.4.979'
 alias g='/usr/local/Cellar/git/2.8.0/bin/git'
@@ -149,7 +153,7 @@ alias vdb='psql vulcan'
 alias v='cd ~/git/vulcan'
 
 export ZCUSTOM="~/.oh-my-zsh/custom/"
-alias eza="atom ~/.oh-my-zsh/custom/aliases.zsh"
+alias eza="$CURRENT_EDITOR ~/.oh-my-zsh/custom/aliases.zsh"
 # alias sza="source ~/.oh-my-zsh/custom/aliases.zsh"
 alias sza="source ~/.zshrc"
 
@@ -164,30 +168,3 @@ export P4HOST="perforce:1666"
 export P4PORT="rsh:/usr/local/bin/crackpipe ssh -2 -a -c blowfish -l p4ssh -q -x perforce.akamai.com /bin/true"
 export P4EDITOR="vi"
 export P4IGNORE=".pyc"
-
-
-### HARMONIX - archived
-# Python/Django aliases
-# alias pm='python manage.py'
-# alias ba=". bin/activate"
-# alias sh+="pm shell_plus"
-# alias rs+="pm runserver_plus 0.0.0.0:8000"
-# alias db="pm dbshell"
-# alias bantha="j bantha && ba"
-# alias orion="cd ~/hmx/orion_www && ba"
-# alias rb4eva="cd ~/hmx/rb4eva && ba"
-# alias psql-dev='PGPASSWORD=RBq8utKDfBgu4b7q psql oriondev -Uoriondev -horion-dev.caf7vrrqkmdp.us-east-1.rds.amazonaws.com'
-# alias startredis='redis-server /usr/local/etc/redis.conf'
-# alias redis-dev='redis-cli -h orion-dev.dq2my3.0001.use1.cache.amazonaws.com'
-# alias redis-prod='redis-cli -h rb-prod.dq2my3.ng.0001.use1.cache.amazonaws.com'
-#
-# # Set architecture flags
-# export ARCHFLAGS="-arch x86_64"
-# export PATH=/usr/local/bin:$PATH
-# # pip should only run if there is a virtualenv currently activated
-# export PIP_REQUIRE_VIRTUALENV=true
-# # cache pip-installed packages to avoid re-downloading
-# export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-# gpip(){
-#     PIP_REQUIRE_VIRTUALENV="" pip "$@"
-# }
