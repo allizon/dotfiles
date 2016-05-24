@@ -12,6 +12,7 @@ ATOM_SOURCE="$HOME_DIR/.atom/"
 ATOM_TARGET="$DOTFILES_DIR/atom/"
 SUBLIME_SOURCE="$HOME_DIR//Library/Application Support/Sublime Text 3/Packages/User/"
 SUBLIME_TARGET="$DOTFILES_DIR/sublime/"
+BACKUP_STRING="Automated backup `date +%Y-%m-%d`"
 
 echo "Copying scripts..."
 cp $DROPBOX_DIR/* $DOTFILES_DIR/scripts/
@@ -24,26 +25,20 @@ cd $DOTFILES_DIR
 cp $ZSH_SOURCE/custom/aliases.zsh $ZSH_TARGET/custom/
 cp $HOME_DIR/.zshrc $ZSH_TARGET
 
-echo "Copying Sublime files..."
-cp -R $SUBLIME_SOURCE $SUBLIME_TARGET
-rm -rf $SUBLIME_TARGET/.git/ # keep .gitignore
-
 echo "Pushing to remote..."
-git aa
-git ci -m "Automated backup `date +%Y-%m-%d`"
-git push bb
+git aa && git ci -m $BACKUP_STRING && git push bb
+
+echo "Pushing modified Sublime files to their own repo..."
+cd $SUBLIME_SOURCE
+git aa && git ci -m $BACKUP_STRING && git push bb
 
 echo "Pushing modified Vim files to their own repo..."
 cd $VIM_SOURCE
-git aa
-git ci -m "Automated backup `date +%Y-%m-%d`"
-git push bb master
+git aa && git ci -m $BACKUP_STRING && git push bb
 
 echo "Pushing modified Atom files to their own repo..."
 cd $ATOM_SOURCE
-git aa
-git ci -m "Automated backup `date +%Y-%m-%d`"
-git push origin master
+git aa && git ci -m $BACKUP_STRING && git push origin
 
 echo
 echo "Done!"
