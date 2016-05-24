@@ -92,14 +92,22 @@ function gfb {
   git co "$branch"
 }
 
-alias pushprofile2="scp ~/.profile.template lab2:~/.profile"
+# Set up external boxes so they're usable!
 function pushprofile {
-  scp ~/.profile.template lab:~/.profile
-  # scp ~/.ssh/root.keys lab:~/.ssh/root.keys
-  # scp ~/.vimrc lab:~/.vimrc
-  # ssh lab "mkdir ~/.vim"
-  # scp -r ~/.vim/* lab:~/.vim
-  # rsync ~/.vim lab:~/.vim --exclude "*/.git/*"
+  TEMPLATE=~/.profile.template
+  TARGET=${1:-lab}
+  scp $TEMPLATE $TARGET:~/.profile
+  pushvimfiles $TARGET
+}
+
+function pushvimfiles {
+  VIM_DIR=~/.vim
+  VIMRC=~/.vimrc
+  TARGET=${1:-lab}
+  scp $VIMRC $TARGET:~/.vimrc
+  ssh $TARGET "mkdir ~/.vim"
+  # scp -r $VIM_DIR/* $TARGET:~/.vim
+  rsync -q $VIM_DIR $TARGET:~/.vim --exclude "*/.git/*" --exclude "bundle/command-t/data/benchmark.yml"
 }
 
 ## get top process eating memory

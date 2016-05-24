@@ -18,7 +18,7 @@
     pythonExecutable: "/Users/allen/hmx/rb4eva/bin/python"
   editor:
     fontFamily: "Input"
-    fontSize: 10
+    fontSize: 9
     invisibles: {}
     showInvisibles: true
     tabType: "soft"
