@@ -24,10 +24,6 @@ cd $DOTFILES_DIR
 cp $ZSH_SOURCE/custom/aliases.zsh $ZSH_TARGET/custom/
 cp $HOME_DIR/.zshrc $ZSH_TARGET
 
-echo "Copying Vim files..."
-cp $HOME_DIR/.vimrc $VIM_TARGET
-cp -R $VIM_SOURCE/* $VIM_TARGET
-
 echo "Copying Sublime files..."
 cp -R $SUBLIME_SOURCE $SUBLIME_TARGET
 rm -rf $SUBLIME_TARGET/.git/ # keep .gitignore
@@ -37,14 +33,17 @@ git aa
 git ci -m "Automated backup `date +%Y-%m-%d`"
 git push bb
 
-echo "Pushing modified Atom files..."
+echo "Pushing modified Vim files to their own repo..."
+cd $VIM_SOURCE
+git aa
+git ci -m "Automated backup `date +%Y-%m-%d`"
+git push bb master
+
+echo "Pushing modified Atom files to their own repo..."
 cd $ATOM_SOURCE
 git aa
 git ci -m "Automated backup `date +%Y-%m-%d`"
 git push origin master
-# cp $ATOM_SOURCE/.gitignore $ATOM_TARGET
-# cp $ATOM_SOURCE/*.(cson|less|coffee) $ATOM_TARGET
-# cp -R $ATOM_SOURCE/grammar-config $ATOM_TARGET
-# cp -R $ATOM_SOURCE/packages $ATOM_TARGET
 
+echo
 echo "Done!"
