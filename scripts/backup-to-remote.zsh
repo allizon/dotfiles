@@ -32,15 +32,19 @@ echo "Copying Sublime files..."
 cp -R $SUBLIME_SOURCE $SUBLIME_TARGET
 rm -rf $SUBLIME_TARGET/.git/ # keep .gitignore
 
-echo "Copying Atom files..."
-cp $ATOM_SOURCE/.gitignore $ATOM_TARGET
-cp $ATOM_SOURCE/*.(cson|less|coffee) $ATOM_TARGET
-cp -R $ATOM_SOURCE/grammar-config $ATOM_TARGET
-cp -R $ATOM_SOURCE/packages $ATOM_TARGET
-
 echo "Pushing to remote..."
 git aa
 git ci -m "Automated backup `date +%Y-%m-%d`"
 git push bb
+
+echo "Pushing modified Atom files..."
+cd $ATOM_SOURCE
+git aa
+git ci -m "Automated backup `date +%Y-%m-%d`"
+git push origin master
+# cp $ATOM_SOURCE/.gitignore $ATOM_TARGET
+# cp $ATOM_SOURCE/*.(cson|less|coffee) $ATOM_TARGET
+# cp -R $ATOM_SOURCE/grammar-config $ATOM_TARGET
+# cp -R $ATOM_SOURCE/packages $ATOM_TARGET
 
 echo "Done!"
