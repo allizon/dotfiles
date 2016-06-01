@@ -4,6 +4,7 @@ alias wow-backup="$DROPBOX_DIR/wow-backup.zsh"
 alias dot-backup="$DROPBOX_DIR/backup-to-remote.zsh"
 
 CURRENT_EDITOR='atom'
+alias ed="$CURRENT_EDITOR"
 # CURRENT_EDITOR='vim'
 # CURRENT_EDITOR='subl'
 
@@ -153,7 +154,7 @@ alias rkick='killit rails && rs -d'
 alias thin='bundle exec thin start -d -p 3001'
 
 alias z='zeus'
-alias ztest='RAILS_ENV=test time z rake test'
+alias ztest='time z test'
 # alias zspec='time z rake spec'
 alias zspec='time z rspec --color --format documentation'
 
