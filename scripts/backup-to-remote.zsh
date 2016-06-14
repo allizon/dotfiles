@@ -9,8 +9,6 @@ ZSH_SOURCE="$HOME_DIR/.oh-my-zsh"
 VIM_SOURCE="$HOME_DIR/.vim/"
 ATOM_SOURCE="$HOME_DIR/.atom/"
 SUBLIME_SOURCE="$HOME_DIR//Library/Application Support/Sublime Text 3/Packages/User/"
-RUBYMINE_SOURCE="$HOME_DIR/Library/Preferences/RubyMine2016.1/"
-WEBSTORM_SOURCE="$HOME_DIR/Library/Preferences/WebStorm2016.1/"
 BACKUP_STRING="Automated backup `date +%Y-%m-%d`"
 
 echo "Copying scripts..."
@@ -23,10 +21,6 @@ echo "Copying ZSH files..."
 cd $DOTFILES_DIR
 cp $ZSH_SOURCE/custom/aliases.zsh $ZSH_TARGET/custom/
 cp $HOME_DIR/.zshrc $ZSH_TARGET
-
-echo "Copying JetBrains IDE settings..."
-cp $JETBRAINS_SOURCE/* $DOTFILES_DIR/jetbrains/rubymine
-cp $JETBRAINS_SOURCE/* $DOTFILES_DIR/jetbrains/webstorm
 
 echo "Pushing to remote..."
 git aa && git ci -m $BACKUP_STRING && git push bb

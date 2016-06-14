@@ -3,7 +3,7 @@ DROPBOX_DIR='~/Dropbox/scripts'
 alias wow-backup="$DROPBOX_DIR/wow-backup.zsh"
 alias dot-backup="$DROPBOX_DIR/backup-to-remote.zsh"
 
-CURRENT_EDITOR='atom'
+CURRENT_EDITOR='subl'
 alias ed="$CURRENT_EDITOR"
 # CURRENT_EDITOR='vim'
 # CURRENT_EDITOR='subl'
@@ -29,6 +29,8 @@ alias bi='bundle install'
 alias rt='time z test'
 alias p4b='RAILS_ENV=test scripts/p4_bridge.rb'
 alias kill_zeus='pkill -9 "zeus.*" && pkill -9 "fsevents-wrapper$"'
+alias taildev='tail -f log/development.log | ack AJ'
+alias tailtest='tail -f log/test.log | ack AJ'
 
 alias st3pack='cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User'
 alias md='mkdir -pv'
@@ -73,12 +75,15 @@ alias mp="cd ~/code/mcdn-portal/"
 alias push='git push origin master'
 alias pull='git pull origin master'
 alias merge_develop='g fetch origin develop && g merge FETCH_HEAD'
+alias git_cleanup='g branch -d $(git branch --merged)'
 function go_get {
   echo 'Fetching repo '$1
   git fetch origin $1
   git co $1
 }
 
+
+function gac { git aa && git ci -m "$1" }
 function gdv { git co develop }
 function gfe { git co "feature/MCDNPORTAL-$1" }
 function gbf { git co "bugfix/MCDNPORTAL-$1" }
