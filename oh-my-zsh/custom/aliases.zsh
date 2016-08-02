@@ -3,7 +3,7 @@ DROPBOX_DIR='~/Dropbox/scripts'
 alias wow-backup="$DROPBOX_DIR/wow-backup.zsh"
 alias dot-backup="$DROPBOX_DIR/backup-to-remote.zsh"
 
-CURRENT_EDITOR='subl'
+CURRENT_EDITOR='vi'
 alias ed="$CURRENT_EDITOR"
 # CURRENT_EDITOR='vim'
 # CURRENT_EDITOR='subl'
@@ -39,9 +39,9 @@ alias md='mkdir -pv'
 setopt NO_NOMATCH
 
 ### AKAMAI
-alias agent-ext='/usr/bin/ssh-add $HOME/.ssh/external/2016-03-30;'
-alias agent-int='/usr/bin/ssh-add $HOME/.ssh/internal/2016-03-30; /usr/bin/ssh-add $HOME/.ssh/govops_lab_key_v2'
-alias agent-old='/usr/bin/ssh-add $HOME/.ssh/internal/2015-12-14; /usr/bin/ssh-add $HOME/.ssh/external/2015-12-14'
+alias agent-ext='/usr/bin/ssh-add $HOME/.ssh/external/2016-07-26;'
+alias agent-int='/usr/bin/ssh-add $HOME/.ssh/internal/2016-07-26; /usr/bin/ssh-add $HOME/.ssh/govops_lab_key_v2'
+alias agent-old='/usr/bin/ssh-add $HOME/.ssh/internal/2016-03-30; /usr/bin/ssh-add $HOME/.ssh/external/2016-03-30'
 alias agent-wf='/usr/bin/ssh-add $HOME/.ssh/wf/id_rsa'
 alias agent-bb='/usr/bin/ssh-add $HOME/.ssh/bitbucket/2016-05-19'
 
@@ -52,7 +52,8 @@ alias agent-bb='/usr/bin/ssh-add $HOME/.ssh/bitbucket/2016-05-19'
 # alias sshgen_sipr='ssh-keygen -t rsa -b 2048 -C "`whoami`-sipr-`date +%Y-%m-%d`" -f ~/.ssh/sipr/`date +%Y-%m-%d`'
 
 function akakeygen {
-  ssh-keygen -t rsa -b 2048 -C "`whoami`-$1-`date +%Y-%m-%d`" -f ~/.ssh/$1/`date +%Y-%m-%d`
+  todays_date=`date +"%Y-%m-%d"`
+  ssh-keygen -t rsa -b 2048 -E md5 -C "`whoami`-$1-${todays_date}" -f ~/.ssh/$1/${todays_date};
 }
 
 # Run akakeyconnect in one window, then run akakeyconfirm in another
@@ -66,7 +67,7 @@ function akakeyconnect {
 function akakeyconfirm {
   todays_date=`date +"%Y-%m-%d"`
   for key_type in internal external; do
-    ssh-keygen -l -f ~/.ssh/${key_type}/${todays_date}.pub;
+    ssh-keygen -l -E md5 -C "`whoami`-$1-${todays_date}" -f ~/.ssh/${key_type}/${todays_date}.pub
   done
 }
 
@@ -114,6 +115,15 @@ function pushvimfiles {
   ssh $TARGET "mkdir ~/.vim"
   # scp -r $VIM_DIR/* $TARGET:~/.vim
   rsync -q $VIM_DIR $TARGET:~/.vim --exclude "*/.git/*" --exclude "bundle/command-t/data/benchmark.yml"
+}
+
+# Webpack and push FEE version of portal to lab box
+function make_push {
+  mp
+  cd frontend
+  webpack
+  cd ..
+  make rsync-deployed
 }
 
 ## get top process eating memory
