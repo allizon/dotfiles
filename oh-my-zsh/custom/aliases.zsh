@@ -122,9 +122,12 @@ function make_push {
   mp
   cd frontend
   webpack
+  ./rsyncjs
   cd ..
-  make rsync-deployed
+  # make rsync-deployed
 }
+alias wk="mp && cd frontend && webpack && karma start karma.conf.js"
+alias ks="mp && cd frontend && karma start karma.conf.js"
 
 ## get top process eating memory
 alias psmem='ps aux | sort -nr -k 4'
@@ -192,3 +195,5 @@ export P4HOST="perforce:1666"
 export P4PORT="rsh:/usr/local/bin/crackpipe ssh -2 -a -c blowfish -l p4ssh -q -x perforce.akamai.com /bin/true"
 export P4EDITOR="vi"
 export P4IGNORE="~/.myp4ignore"
+
+export RUBY_DEP_GEM_SILENCE_WARNINGS=1
