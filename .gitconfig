@@ -74,7 +74,7 @@
 	undo = reset --soft HEAD@{1}
 	up = !git fetch origin && git rebase origin/master
 [core]
-	editor = /usr/local/Cellar/vim/7.4.979/bin/vim
+	editor = vim
 	whitespace = trailing-space,space-before-tab
 	excludesfile = /Users/alholt/.gitignore
 [branch]
@@ -83,7 +83,7 @@
 	rebase = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

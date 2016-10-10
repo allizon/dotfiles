@@ -9,10 +9,12 @@ alias ed="$CURRENT_EDITOR"
 # CURRENT_EDITOR='subl'
 
 # Mac OSX aliases - versions in Homebrew
-VIM_VERSION='7.4.979'
+VIM_VERSION='7.4.2290'
 alias g='/usr/local/Cellar/git/2.8.0/bin/git'
-alias vi="/usr/local/Cellar/vim/$VIM_VERSION/bin/vim"
-alias vim="/usr/local/Cellar/vim/$VIM_VERSION/bin/vim"
+# alias vi='/usr/local/bin/mvim'
+# alias vim='/usr/local/bin/mvim'
+alias vi="rvm use @global do /usr/local/Cellar/vim/$VIM_VERSION/bin/vim"
+alias vim="rvm use @global do /usr/local/Cellar/vim/$VIM_VERSION/bin/vim"
 
 alias vis="vi -S Session.vim"
 alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder"
@@ -25,6 +27,7 @@ alias rcop='rubocop --format simple'
 alias guard='bundle exec guard'
 alias gz='bundle exec guard -g zeus -c'
 alias gs='bundle exec guard -g spring -c'
+alias zs='zeus server'
 alias bi='bundle install'
 alias rt='time z test'
 alias p4b='RAILS_ENV=test scripts/p4_bridge.rb'
@@ -73,18 +76,20 @@ function akakeyconfirm {
 
 alias mp="cd ~/code/mcdn-portal/"
 
-alias push='git push origin master'
-alias pull='git pull origin master'
+alias gst='clear && git status'
+alias push='git push origin HEAD'
+alias pull='git pull origin HEAD'
 alias merge_develop='g fetch origin develop && g merge FETCH_HEAD'
 alias git_cleanup='g branch -d $(git branch --merged)'
 function go_get {
   echo 'Fetching repo '$1
   git fetch origin $1
   git co $1
+  rake db:migrate
 }
-
-
 function gac { git aa && git ci -m "$1" }
+
+# not really using these....
 function gdv { git co develop }
 function gfe { git co "feature/MCDNPORTAL-$1" }
 function gbf { git co "bugfix/MCDNPORTAL-$1" }
@@ -115,6 +120,21 @@ function pushvimfiles {
   ssh $TARGET "mkdir ~/.vim"
   # scp -r $VIM_DIR/* $TARGET:~/.vim
   rsync -q $VIM_DIR $TARGET:~/.vim --exclude "*/.git/*" --exclude "bundle/command-t/data/benchmark.yml"
+}
+
+# Run webpack with current portal config
+function wp {
+  mp
+  sudo rm -rf public/frontend/*
+  sudo rm -rf frontend/app/build/*
+  cd frontend
+  webpack -w
+}
+
+# Run webpack with current portal config and start foreman
+function wpf {
+  wp
+  foreman start
 }
 
 # Webpack and push FEE version of portal to lab box
@@ -172,9 +192,18 @@ alias rkick='killit rails && rs -d'
 alias thin='bundle exec thin start -d -p 3001'
 
 alias z='zeus'
-alias ztest='time z test'
+# alias ztest='time z test'
 # alias zspec='time z rake spec'
 alias zspec='time z rspec --color --format documentation'
+
+function ztest() {
+  CODE_DIR='/Users/alholt/code/mcdn-portal'
+  RUBY_CMD='/Users/alholt/.rvm/rubies/ruby-2.2.5/bin/ruby'
+  ZEUS_BIN="$CODE_DIR/bin/zeus"
+  TEST_DIR="$CODE_DIR/test"
+  $RUBY_CMD -Itest $ZEUS_BIN test $CODE_DIR/$1
+}
+
 
 alias vdb='psql vulcan'
 alias v='cd ~/git/vulcan'
