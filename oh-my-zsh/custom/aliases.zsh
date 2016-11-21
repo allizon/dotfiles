@@ -9,12 +9,14 @@ alias ed="$CURRENT_EDITOR"
 # CURRENT_EDITOR='subl'
 
 # Mac OSX aliases - versions in Homebrew
-VIM_VERSION='7.4.2290'
+# VIM_VERSION='7.4.2290'
+VIM_VERSION='8.0.0066'
 alias g='/usr/local/Cellar/git/2.8.0/bin/git'
 # alias vi='/usr/local/bin/mvim'
 # alias vim='/usr/local/bin/mvim'
 alias vi="rvm use @global do /usr/local/Cellar/vim/$VIM_VERSION/bin/vim"
 alias vim="rvm use @global do /usr/local/Cellar/vim/$VIM_VERSION/bin/vim"
+alias mvim="/Applications/mvim"
 
 alias vis="vi -S Session.vim"
 alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder"
@@ -56,7 +58,9 @@ alias agent-bb='/usr/bin/ssh-add $HOME/.ssh/bitbucket/2016-05-19'
 
 function akakeygen {
   todays_date=`date +"%Y-%m-%d"`
-  ssh-keygen -t rsa -b 2048 -E md5 -C "`whoami`-$1-${todays_date}" -f ~/.ssh/$1/${todays_date};
+  for key_type in internal external; do
+    ssh-keygen -t rsa -b 2048 -E md5 -C "`whoami`-${key_type}-${todays_date}" -f ~/.ssh/${key_type}/${todays_date};
+  done
 }
 
 # Run akakeyconnect in one window, then run akakeyconfirm in another
@@ -75,8 +79,10 @@ function akakeyconfirm {
 }
 
 alias mp="cd ~/code/mcdn-portal/"
+alias mpt="cd ~/code/mcdn-portal-test/"
 
 alias gst='clear && git status'
+alias gstash='git aa && git stash save ' $1
 alias push='git push origin HEAD'
 alias pull='git pull origin HEAD'
 alias merge_develop='g fetch origin develop && g merge FETCH_HEAD'
