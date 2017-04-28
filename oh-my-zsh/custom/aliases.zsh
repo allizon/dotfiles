@@ -3,19 +3,26 @@ DROPBOX_DIR='~/Dropbox/scripts'
 alias wow-backup="$DROPBOX_DIR/wow-backup.zsh"
 alias dot-backup="$DROPBOX_DIR/backup-to-remote.zsh"
 
-CURRENT_EDITOR='vi'
+EDITOR='nvim'
+CURRENT_EDITOR='nvim'
 alias ed="$CURRENT_EDITOR"
 # CURRENT_EDITOR='vim'
 # CURRENT_EDITOR='subl'
 
+alias h='history'
+eval "$(thefuck --alias)"
+
 # Mac OSX aliases - versions in Homebrew
 # VIM_VERSION='7.4.2290'
-VIM_VERSION='8.0.0066'
+# VIM_VERSION='8.0.0066'
+VIM_VERSION='8.0.0562'
 alias g='/usr/local/Cellar/git/2.8.0/bin/git'
 # alias vi='/usr/local/bin/mvim'
 # alias vim='/usr/local/bin/mvim'
-alias vi="rvm use @global do /usr/local/Cellar/vim/$VIM_VERSION/bin/vim"
-alias vim="rvm use @global do /usr/local/Cellar/vim/$VIM_VERSION/bin/vim"
+# alias vi="rvm use @global do /usr/local/Cellar/vim/$VIM_VERSION/bin/vim"
+# alias vim="rvm use @global do /usr/local/Cellar/vim/$VIM_VERSION/bin/vim"
+alias vi='/usr/local/bin/nvim'
+alias vim='/usr/local/bin/nvim'
 alias mvim="/Applications/mvim"
 
 alias vis="vi -S Session.vim"
@@ -30,12 +37,37 @@ alias guard='bundle exec guard'
 alias gz='bundle exec guard -g zeus -c'
 alias gs='bundle exec guard -g spring -c'
 alias zs='zeus server'
+alias rc='rails console'
+alias rtc='rails console test --sandbox'
 alias bi='bundle install'
 alias rt='time z test'
 alias p4b='RAILS_ENV=test scripts/p4_bridge.rb'
 alias kill_zeus='pkill -9 "zeus.*" && pkill -9 "fsevents-wrapper$"'
+alias kill_spring='pkill -9 "spring *"'
 alias taildev='tail -f log/development.log | ack AJ'
 alias tailtest='tail -f log/test.log | ack AJ'
+
+function git_stash_staged {
+  ##Stash everything temporarily.  Keep staged files, discard everything else after stashing.
+  git stash --keep-index
+
+  #Stash everything that remains (only the staged files should remain)  This is the stash we want to keep, so give it a name.
+  git stash save "$1"
+
+  #Apply the original stash to get us back to where we started.
+  git stash apply stash@{1}
+
+  #Create a temporary patch to reverse the originally staged changes and apply it
+  git stash show -p | git apply -R
+
+  #Delete the temporary stash
+  git stash drop stash@{1}
+  clear
+  git stash list
+  echo
+  git status
+}
+alias gss="git_stash_staged"
 
 alias st3pack='cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User'
 alias md='mkdir -pv'
@@ -87,12 +119,22 @@ alias push='git push origin HEAD'
 alias pull='git pull origin HEAD'
 alias merge_develop='g fetch origin develop && g merge FETCH_HEAD'
 alias git_cleanup='g branch -d $(git branch --merged)'
+
 function go_get {
-  echo 'Fetching repo '$1
-  git fetch origin $1
-  git co $1
-  rake db:migrate
+  git_fetch_and_co "feature/MCDNPORTAL-$1" ||
+    git_fetch_and_co "bugfix/MCDNPORTAL-$1" ||
+    git_fetch_and_co "feature/GCDSEAMS-$1" ||
+    git_fetch_and_co "bugfix/GCDSEAMS-$1" ||
+    git_fetch_and_co "release/$1"
+  # rake db:migrate
 }
+alias gget='go_get'
+
+function git_fetch_and_co {
+  echo "Trying to fetch repo $1..."
+  git co $1 || git fetch origin $1 && git co $1
+}
+
 function gac { git aa && git ci -m "$1" }
 
 # not really using these....
@@ -201,6 +243,7 @@ alias z='zeus'
 # alias ztest='time z test'
 # alias zspec='time z rake spec'
 alias zspec='time z rspec --color --format documentation'
+alias h='history'
 
 function ztest() {
   CODE_DIR='/Users/alholt/code/mcdn-portal'
@@ -232,3 +275,4 @@ export P4EDITOR="vi"
 export P4IGNORE="~/.myp4ignore"
 
 export RUBY_DEP_GEM_SILENCE_WARNINGS=1
+export DISABLE_DATABASE_ENVIRONMENT_CHECK=1

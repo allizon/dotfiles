@@ -1,7 +1,7 @@
 [user]
 	useconfigonly = true
-	name = Allen Holt
-	email = alholt@akamai.com
+	name =
+	email =
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
@@ -48,6 +48,7 @@
 	dc = diff --cached
 	filelog = log -u
 	fl = log -u
+	gr = log --oneline --graph --decorate
 	ir = !git rebase -i origin/master
 	l = log --oneline
 	lg = log --oneline --graph --decorate
@@ -74,9 +75,9 @@
 	undo = reset --soft HEAD@{1}
 	up = !git fetch origin && git rebase origin/master
 [core]
-	editor = vim
+	editor = /usr/local/bin/nvim
 	whitespace = trailing-space,space-before-tab
-	excludesfile = /Users/alholt/.gitignore
+	excludesfile = /Users/alholt/.gitignore_global
 [branch]
 	autosetupmerge = true
 [pull]
@@ -93,3 +94,5 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[commit]
+	template = /Users/alholt/.stCommitMsg
