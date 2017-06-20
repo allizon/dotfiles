@@ -28,6 +28,8 @@ alias mvim="/Applications/mvim"
 alias vis="vi -S Session.vim"
 alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder"
 
+alias pg='pgcli portal'
+
 alias j="/usr/local/bin/autojump"
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
@@ -38,9 +40,9 @@ alias gz='bundle exec guard -g zeus -c'
 alias gs='bundle exec guard -g spring -c'
 alias zs='zeus server'
 alias rc='rails console'
+alias rt='time rails test'
 alias rtc='rails console test --sandbox'
 alias bi='bundle install'
-alias rt='time z test'
 alias p4b='RAILS_ENV=test scripts/p4_bridge.rb'
 alias kill_zeus='pkill -9 "zeus.*" && pkill -9 "fsevents-wrapper$"'
 alias kill_spring='pkill -9 "spring *"'
@@ -77,10 +79,17 @@ setopt NO_NOMATCH
 
 ### AKAMAI
 alias agent-ext='/usr/bin/ssh-add $HOME/.ssh/external/2016-07-26;'
-alias agent-int='/usr/bin/ssh-add $HOME/.ssh/internal/2016-07-26; /usr/bin/ssh-add $HOME/.ssh/govops_lab_key_v2'
-alias agent-old='/usr/bin/ssh-add $HOME/.ssh/internal/2016-03-30; /usr/bin/ssh-add $HOME/.ssh/external/2016-03-30'
-alias agent-wf='/usr/bin/ssh-add $HOME/.ssh/wf/id_rsa'
+alias agent-int='/usr/bin/ssh-add $HOME/.ssh/internal/2017-03-17; /usr/bin/ssh-add $HOME/.ssh/govops_lab_key_v2'
+# alias agent-old='/usr/bin/ssh-add $HOME/.ssh/internal/2016-07-26; /usr/bin/ssh-add $HOME/.ssh/external/2016-03-30'
+alias agent-wf='/usr/bin/ssh-add $HOME/Dropbox/wf-2017'
 alias agent-bb='/usr/bin/ssh-add $HOME/.ssh/bitbucket/2016-05-19'
+function agent-reset {
+  ssh-add -D
+  agent-int
+  agent-bb
+  agent-wf
+  ssh-add -l
+}
 
 # alias sshgen_external='ssh-keygen -t rsa -b 2048 -C "`whoami`-external-`date +%Y-%m-%d`" -f ~/.ssh/external/`date +%Y-%m-%d`'
 # alias sshgen_internal='ssh-keygen -t rsa -b 2048 -C "`whoami`-internal-`date +%Y-%m-%d`" -f ~/.ssh/internal/`date +%Y-%m-%d`'
@@ -127,6 +136,7 @@ function go_get {
     git_fetch_and_co "bugfix/GCDSEAMS-$1" ||
     git_fetch_and_co "release/$1"
   # rake db:migrate
+  g pull
 }
 alias gget='go_get'
 
@@ -276,3 +286,5 @@ export P4IGNORE="~/.myp4ignore"
 
 export RUBY_DEP_GEM_SILENCE_WARNINGS=1
 export DISABLE_DATABASE_ENVIRONMENT_CHECK=1
+
+
