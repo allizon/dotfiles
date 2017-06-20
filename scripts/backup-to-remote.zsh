@@ -7,6 +7,7 @@ DROPBOX_DIR="$HOME_DIR/Dropbox/scripts/"
 ZSH_TARGET="$DOTFILES_DIR/oh-my-zsh"
 ZSH_SOURCE="$HOME_DIR/.oh-my-zsh"
 VIM_SOURCE="$HOME_DIR/.vim/"
+NEOVIM_TARGET="$DOTFILES_DIR/.config/nvim/"
 ATOM_SOURCE="$HOME_DIR/.atom/"
 SUBLIME_SOURCE="$HOME_DIR//Library/Application Support/Sublime Text 3/Packages/User/"
 BACKUP_STRING="Automated backup `date +%Y-%m-%d`"
@@ -16,6 +17,9 @@ cp $DROPBOX_DIR/* $DOTFILES_DIR/scripts/
 
 echo "Copying Git config..."
 cp $HOME_DIR/.gitconfig $DOTFILES_DIR
+
+echo "Copying NeoVim config..."
+cp $HOME_DIR/.config/nvim/init.vim $DOTFILES_DIR
 
 echo "Copying ZSH files..."
 cd $DOTFILES_DIR
