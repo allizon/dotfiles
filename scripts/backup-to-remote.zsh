@@ -19,7 +19,7 @@ echo "Copying Git config..."
 cp $HOME_DIR/.gitconfig $DOTFILES_DIR
 
 echo "Copying NeoVim config..."
-cp $HOME_DIR/.config/nvim/init.vim $DOTFILES_DIR
+cp $HOME_DIR/.config/nvim/init.vim $NEOVIM_TARGET
 
 echo "Copying ZSH files..."
 cd $DOTFILES_DIR
