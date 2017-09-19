@@ -2,12 +2,14 @@
 echo "Backing stuff up!"
 
 HOME_DIR='/Users/alholt'
+PORTAL_DIR="$HOME_DIR/code/mcdn-portal/"
 DOTFILES_DIR="$HOME_DIR/code/dotfiles/"
 DROPBOX_DIR="$HOME_DIR/Dropbox/scripts/"
 ZSH_TARGET="$DOTFILES_DIR/oh-my-zsh"
 ZSH_SOURCE="$HOME_DIR/.oh-my-zsh"
 VIM_SOURCE="$HOME_DIR/.vim/"
 NEOVIM_TARGET="$DOTFILES_DIR/.config/nvim/"
+ALLI_MAKEFILE_TARGET="$DOTFILES_DIR/alli.makefile"
 ATOM_SOURCE="$HOME_DIR/.atom/"
 SUBLIME_SOURCE="$HOME_DIR//Library/Application Support/Sublime Text 3/Packages/User/"
 BACKUP_STRING="Automated backup `date +%Y-%m-%d`"
@@ -20,6 +22,9 @@ cp $HOME_DIR/.gitconfig $DOTFILES_DIR
 
 echo "Copying NeoVim config..."
 cp $HOME_DIR/.config/nvim/init.vim $NEOVIM_TARGET
+
+echo "Copying custom Portal makefile..."
+cp $PORTAL_DIR/alli.makefile $ALLI_MAKEFILE_TARGET
 
 echo "Copying ZSH files..."
 cd $DOTFILES_DIR

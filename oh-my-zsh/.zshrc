@@ -6,6 +6,9 @@ export ZSH=/Users/alholt/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="awesomepanda"
+# ZSH_THEME="gianu"
+# ZSH_THEME="refined"
+# ZSH_THEME="pygmalion"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -153,4 +156,4 @@ git_prompt_string() {
 }
 
 # Set the right-hand prompt
-RPS1='$(git_prompt_string)'
+# RPS1='$(git_prompt_string)'

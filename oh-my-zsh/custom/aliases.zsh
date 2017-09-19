@@ -9,8 +9,30 @@ alias ed="$CURRENT_EDITOR"
 # CURRENT_EDITOR='vim'
 # CURRENT_EDITOR='subl'
 
-alias h='history'
-eval "$(thefuck --alias)"
+alias hyed="bash -c 'exec env ${EDITOR:=nvim} ~/.hyper.js'"
+alias t="todo.sh"
+alias today="clear && todo.sh ls @today"
+alias tak="todo.sh ls @akamai"
+function taa { todo.sh add "[@akamai][MCDNPORTAL-$1] $2" }
+
+# == VIM stuff
+# === Allow in zsh
+bindkey -v
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
+
+# function zle-line-init zle-keymap-select {
+#     VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
+#     RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $(git_custom_status) $EPS1"
+#     zle reset-prompt
+# }
+# zle -N zle-line-init
+# zle -N zle-keymap-select
+export KEYTIMEOUT=1
 
 # Mac OSX aliases - versions in Homebrew
 # VIM_VERSION='7.4.2290'
@@ -26,9 +48,16 @@ alias vim='/usr/local/bin/nvim'
 alias mvim="/Applications/mvim"
 
 alias vis="vi -S Session.vim"
-alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder"
+# == End VIM stuff
+#
+#
+alias s='subl'
 
-alias pg='pgcli portal'
+alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder"
+alias h='history'
+eval "$(thefuck --alias)"
+
+alias amake="make -f alli.makefile"
 
 alias j="/usr/local/bin/autojump"
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
@@ -71,6 +100,17 @@ function git_stash_staged {
 }
 alias gss="git_stash_staged"
 
+function goto {
+  case $1 in
+    'journal')
+      cd ~/Dropbox/@TXT/Journal
+      ;;
+    'neosnippets')
+      cd /Users/alholt/.local/share/nvim/plugged/neosnippet-snippets/neosnippets
+      ;;
+  esac
+}
+
 alias st3pack='cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User'
 alias md='mkdir -pv'
 
@@ -78,8 +118,8 @@ alias md='mkdir -pv'
 setopt NO_NOMATCH
 
 ### AKAMAI
-alias agent-ext='/usr/bin/ssh-add $HOME/.ssh/external/2016-07-26;'
-alias agent-int='/usr/bin/ssh-add $HOME/.ssh/internal/2017-03-17; /usr/bin/ssh-add $HOME/.ssh/govops_lab_key_v2'
+alias agent-ext='/usr/bin/ssh-add $HOME/.ssh/external/2017-07-13;'
+alias agent-int='/usr/bin/ssh-add $HOME/.ssh/internal/2017-07-13; /usr/bin/ssh-add $HOME/.ssh/govops_lab_key_v2'
 # alias agent-old='/usr/bin/ssh-add $HOME/.ssh/internal/2016-07-26; /usr/bin/ssh-add $HOME/.ssh/external/2016-03-30'
 alias agent-wf='/usr/bin/ssh-add $HOME/Dropbox/wf-2017'
 alias agent-bb='/usr/bin/ssh-add $HOME/.ssh/bitbucket/2016-05-19'
@@ -120,6 +160,7 @@ function akakeyconfirm {
 }
 
 alias mp="cd ~/code/mcdn-portal/"
+alias mpn="cd ~/code/mcdn-portal-new/"
 alias mpt="cd ~/code/mcdn-portal-test/"
 
 alias gst='clear && git status'
@@ -240,10 +281,10 @@ function p4e { p4 edit $1 && vi $1 }
 function p4r { p4 revert $1 }
 function p4d { p4 diff $1 }
 
-
 alias psql='/Applications/Postgres.app/Contents/Versions/9.4/bin/psql'
 alias repost='/Applications/Postgres.app/Contents/MacOS/Postgres restart -D ~/Library/Application\ Support/Postgres/var/ -m fast -s'
-alias pdb='psql portal'
+# alias pdb='psql portal'
+alias pg='pgcli portal'
 alias rake='bundle exec rake'
 alias rr='bundle exec rake routes'
 alias rkick='killit rails && rs -d'
@@ -280,7 +321,8 @@ function killit () {
 export P4CONFIG=".perforce"
 export P4USER="alholt"
 export P4HOST="perforce:1666"
-export P4PORT="rsh:/usr/local/bin/crackpipe ssh -2 -a -c blowfish -l p4ssh -q -x perforce.akamai.com /bin/true"
+# export P4PORT="rsh:/usr/local/bin/crackpipe ssh -2 -a -c blowfish -l p4ssh -q -x perforce.akamai.com /bin/true"
+export P4PORT="rsh:ssh -2 -a -l p4source -q -x p4.source.akamai.com /bin/true"
 export P4EDITOR="vi"
 export P4IGNORE="~/.myp4ignore"
 
