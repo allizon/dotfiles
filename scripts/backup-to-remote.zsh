@@ -31,11 +31,11 @@ cp $ZSH_SOURCE/custom/* $ZSH_TARGET/custom/
 cp $HOME/.zshrc $ZSH_TARGET
 
 echo "Pushing to remote..."
-git aa && git ci -m $BACKUP_STRING && git push bb
+git aa && git ci -m $BACKUP_STRING && git push gh
 
-echo "Pushing modified Sublime files to their own repo..."
-cd $SUBLIME_SOURCE
-git aa && git ci -m $BACKUP_STRING && git push bb
+# echo "Pushing modified Sublime files to their own repo..."
+# cd $SUBLIME_SOURCE
+# git aa && git ci -m $BACKUP_STRING && git push bb
 
 # echo "Pushing modified Vim files to their own repo..."
 # cd $VIM_SOURCE
