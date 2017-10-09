@@ -1,19 +1,16 @@
-export ZCUSTOM="~/.oh-my-zsh/custom/"
-alias eza="$CURRENT_EDITOR ~/.oh-my-zsh/custom/aliases.zsh"
-alias sza="source ~/.zshrc"
+export zconf="$HOME/.oh-my-zsh/custom"
+alias ez="$CURRENT_EDITOR $zconf/aliases.zsh"
+alias sz="source ~/.zshrc"
 
 # Personal convenience scripts
-DROPBOX_DIR='~/Dropbox/scripts'
-alias wow-backup="$DROPBOX_DIR/wow-backup.zsh"
-alias dot-backup="$DROPBOX_DIR/backup-to-remote.zsh"
+export dropbox="$HOME/Dropbox"
+alias wow-backup="$dropbox/scripts/wow-backup.zsh"
+alias dot-backup="$dropbox/scripts/backup-to-remote.zsh"
 
 EDITOR='nvim'
 CURRENT_EDITOR='nvim'
 alias ed="$CURRENT_EDITOR"
 alias gvi="nyaovim"
-# alias gvi="/usr/local/bin/vimr"
-# CURRENT_EDITOR='vim'
-# CURRENT_EDITOR='subl'
 
 alias hyed="bash -c 'exec env ${EDITOR:=nvim} ~/.hyper.js'"
 alias s='subl'
@@ -21,8 +18,6 @@ alias s='subl'
 alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder"
 alias h='history'
 eval "$(thefuck --alias)"
-
-alias amake="make -f allistuff/Makefile"
 
 function goto {
   case $1 in
