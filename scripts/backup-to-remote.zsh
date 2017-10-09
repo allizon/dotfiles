@@ -21,14 +21,14 @@ echo "Copying Git config..."
 cp $HOME_DIR/.gitconfig $DOTFILES_DIR
 
 echo "Copying NeoVim config..."
-cp $HOME_DIR/.config/nvim/init.vim $NEOVIM_TARGET
+cp $HOME_DIR/.config/nvim/* $NEOVIM_TARGET
 
 echo "Copying custom Portal makefile..."
 cp $PORTAL_DIR/alli.makefile $ALLI_MAKEFILE_TARGET
 
 echo "Copying ZSH files..."
 cd $DOTFILES_DIR
-cp $ZSH_SOURCE/custom/aliases.zsh $ZSH_TARGET/custom/
+cp $ZSH_SOURCE/custom/* $ZSH_TARGET/custom/
 cp $HOME_DIR/.zshrc $ZSH_TARGET
 
 echo "Pushing to remote..."
