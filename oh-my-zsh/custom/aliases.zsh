@@ -6,14 +6,26 @@ alias dot-backup="$DROPBOX_DIR/backup-to-remote.zsh"
 EDITOR='nvim'
 CURRENT_EDITOR='nvim'
 alias ed="$CURRENT_EDITOR"
+alias gvi="nyaovim"
+# alias gvi="/usr/local/bin/vimr"
 # CURRENT_EDITOR='vim'
 # CURRENT_EDITOR='subl'
 
 alias hyed="bash -c 'exec env ${EDITOR:=nvim} ~/.hyper.js'"
-alias t="todo.sh"
+
+# == Todo.txt Stuff
+alias t="clear && todo.sh"
 alias today="clear && todo.sh ls @today"
-alias tak="todo.sh ls @akamai"
-function taa { todo.sh add "[@akamai][MCDNPORTAL-$1] $2" }
+alias tak="clear && todo.sh ls @akamai"
+function taa {
+  branch_name="$(git symbolic-ref --short HEAD)"
+  todo.sh add "[@akamai][$branch_name] $1"
+}
+function tj {
+  clear
+  branch_name="$(git symbolic-ref --short HEAD)"
+  todo.sh ls $branch_name
+}
 
 # == VIM stuff
 # === Allow in zsh
@@ -57,7 +69,7 @@ alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && kill
 alias h='history'
 eval "$(thefuck --alias)"
 
-alias amake="make -f alli.makefile"
+alias amake="make -f allistuff/Makefile"
 
 alias j="/usr/local/bin/autojump"
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
@@ -123,11 +135,13 @@ alias agent-int='/usr/bin/ssh-add $HOME/.ssh/internal/2017-07-13; /usr/bin/ssh-a
 # alias agent-old='/usr/bin/ssh-add $HOME/.ssh/internal/2016-07-26; /usr/bin/ssh-add $HOME/.ssh/external/2016-03-30'
 alias agent-wf='/usr/bin/ssh-add $HOME/Dropbox/wf-2017'
 alias agent-bb='/usr/bin/ssh-add $HOME/.ssh/bitbucket/2016-05-19'
+alias agent-github='/usr/bin/ssh-add /keybase/private/allizon/github_id_rsa'
 function agent-reset {
   ssh-add -D
   agent-int
   agent-bb
   agent-wf
+  agent-github
   ssh-add -l
 }
 

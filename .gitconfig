@@ -1,7 +1,7 @@
 [user]
 	useconfigonly = true
-	name =
-	email =
+	name = Allison Holt
+	email = ajholt@gmail.com
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
