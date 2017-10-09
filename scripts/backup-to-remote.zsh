@@ -20,7 +20,7 @@ echo "Copying Git config..."
 cp $HOME/.gitconfig $DOTFILES_DIR
 
 echo "Copying NeoVim config..."
-rm -rf $NEOVIM_TARGET/custom/*
+rm -rf $NEOVIM_TARGET/*
 cp $HOME/.config/nvim/* $NEOVIM_TARGET
 
 echo "Copying custom Portal makefile..."
