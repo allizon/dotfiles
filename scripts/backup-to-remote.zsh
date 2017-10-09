@@ -1,35 +1,34 @@
 #!/bin/zsh
 echo "Backing stuff up!"
 
-HOME_DIR='/Users/alholt'
-PORTAL_DIR="$HOME_DIR/code/mcdn-portal/"
-DOTFILES_DIR="$HOME_DIR/code/dotfiles/"
-DROPBOX_DIR="$HOME_DIR/Dropbox/scripts/"
+DOTFILES_DIR="$HOME/code/dotfiles/"
+DROPBOX_DIR="$dropbox/scripts/"
+
 ZSH_TARGET="$DOTFILES_DIR/oh-my-zsh"
-ZSH_SOURCE="$HOME_DIR/.oh-my-zsh"
-VIM_SOURCE="$HOME_DIR/.vim/"
+ZSH_SOURCE="$HOME/.oh-my-zsh"
+VIM_SOURCE="$HOME/.vim/"
 NEOVIM_TARGET="$DOTFILES_DIR/.config/nvim/"
 ALLI_MAKEFILE_TARGET="$DOTFILES_DIR/alli.makefile"
-ATOM_SOURCE="$HOME_DIR/.atom/"
-SUBLIME_SOURCE="$HOME_DIR//Library/Application Support/Sublime Text 3/Packages/User/"
+ATOM_SOURCE="$HOME/.atom/"
+SUBLIME_SOURCE="$HOME/Library/Application Support/Sublime Text 3/Packages/User/"
 BACKUP_STRING="Automated backup `date +%Y-%m-%d`"
 
 echo "Copying scripts..."
 cp $DROPBOX_DIR/* $DOTFILES_DIR/scripts/
 
 echo "Copying Git config..."
-cp $HOME_DIR/.gitconfig $DOTFILES_DIR
+cp $HOME/.gitconfig $DOTFILES_DIR
 
 echo "Copying NeoVim config..."
-cp $HOME_DIR/.config/nvim/* $NEOVIM_TARGET
+cp $HOME/.config/nvim/* $NEOVIM_TARGET
 
 echo "Copying custom Portal makefile..."
-cp $PORTAL_DIR/alli.makefile $ALLI_MAKEFILE_TARGET
+cp $portal/allistuff/Makefile $DOTFILES_DIR/allistuff/Makefile
 
 echo "Copying ZSH files..."
 cd $DOTFILES_DIR
 cp $ZSH_SOURCE/custom/* $ZSH_TARGET/custom/
-cp $HOME_DIR/.zshrc $ZSH_TARGET
+cp $HOME/.zshrc $ZSH_TARGET
 
 echo "Pushing to remote..."
 git aa && git ci -m $BACKUP_STRING && git push bb
@@ -38,13 +37,13 @@ echo "Pushing modified Sublime files to their own repo..."
 cd $SUBLIME_SOURCE
 git aa && git ci -m $BACKUP_STRING && git push bb
 
-echo "Pushing modified Vim files to their own repo..."
-cd $VIM_SOURCE
-git aa && git ci -m $BACKUP_STRING && git push bb
+# echo "Pushing modified Vim files to their own repo..."
+# cd $VIM_SOURCE
+# git aa && git ci -m $BACKUP_STRING && git push bb
 
-echo "Pushing modified Atom files to their own repo..."
-cd $ATOM_SOURCE
-git aa && git ci -m $BACKUP_STRING && git push origin
+# echo "Pushing modified Atom files to their own repo..."
+# cd $ATOM_SOURCE
+# git aa && git ci -m $BACKUP_STRING && git push origin
 
 echo
 echo "Done!"

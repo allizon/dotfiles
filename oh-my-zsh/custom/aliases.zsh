@@ -4,6 +4,9 @@ alias sz="source ~/.zshrc"
 
 # Personal convenience scripts
 export dropbox="$HOME/Dropbox"
+export txt="$dropbox/@TXT"
+export journal="$txt/journal"
+
 alias wow-backup="$dropbox/scripts/wow-backup.zsh"
 alias dot-backup="$dropbox/scripts/backup-to-remote.zsh"
 
@@ -19,19 +22,8 @@ alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && kill
 alias h='history'
 eval "$(thefuck --alias)"
 
-function goto {
-  case $1 in
-    'journal')
-      cd ~/Dropbox/@TXT/Journal
-      ;;
-    'neosnippets')
-      cd /Users/alholt/.local/share/nvim/plugged/neosnippet-snippets/neosnippets
-      ;;
-    'st3pack')
-      cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-      ;;
-  esac
-}
+export neosnippets="cd /Users/alholt/.local/share/nvim/plugged/neosnippet-snippets/neosnippets"
+export st3pack="~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User"
 
 # Set up external boxes so they're usable!
 function pushprofile {
