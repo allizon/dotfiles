@@ -20,7 +20,7 @@ echo "Copying Git config..."
 cp $HOME/.gitconfig $DOTFILES_DIR
 
 echo "Copying NeoVim config..."
-rm -rf $NEOVIM_TARGET/custom/
+rm -rf $NEOVIM_TARGET/custom/*
 cp $HOME/.config/nvim/* $NEOVIM_TARGET
 
 echo "Copying custom Portal makefile..."
@@ -28,7 +28,7 @@ cp $portal/allistuff/Makefile $DOTFILES_DIR/allistuff/Makefile
 
 echo "Copying ZSH files..."
 cd $DOTFILES_DIR
-rm -rf $ZSH_TARGET/custom/
+rm -rf $ZSH_TARGET/custom/*
 cp $ZSH_SOURCE/custom/* $ZSH_TARGET/custom/
 cp $HOME/.zshrc $ZSH_TARGET
 
