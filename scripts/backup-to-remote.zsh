@@ -1,6 +1,8 @@
 #!/bin/zsh
 echo "Backing stuff up!"
 
+BACKUP_STRING="Automated backup `date +%Y-%m-%d`"
+
 DOTFILES_DIR="$HOME/code/dotfiles/"
 DROPBOX_DIR="$dropbox/scripts/"
 
@@ -8,10 +10,9 @@ ZSH_TARGET="$DOTFILES_DIR/oh-my-zsh"
 ZSH_SOURCE="$HOME/.oh-my-zsh"
 VIM_SOURCE="$HOME/.vim/"
 NEOVIM_TARGET="$DOTFILES_DIR/.config/nvim/"
-ALLI_MAKEFILE_TARGET="$DOTFILES_DIR/alli.makefile"
+
 ATOM_SOURCE="$HOME/.atom/"
 SUBLIME_SOURCE="$HOME/Library/Application Support/Sublime Text 3/Packages/User/"
-BACKUP_STRING="Automated backup `date +%Y-%m-%d`"
 
 echo "Copying scripts..."
 cp $DROPBOX_DIR/* $DOTFILES_DIR/scripts/

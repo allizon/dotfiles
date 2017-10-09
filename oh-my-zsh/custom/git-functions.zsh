@@ -1,6 +1,6 @@
 setopt NO_NOMATCH
 
-function git_stash_staged {
+git_stash_staged() {
   ##Stash everything temporarily.  Keep staged files, discard everything else after stashing.
   git stash --keep-index
 
@@ -29,7 +29,7 @@ alias pull='git pull origin HEAD'
 alias merge_develop='g fetch origin develop && g merge FETCH_HEAD'
 alias git_cleanup='g branch -d $(git branch --merged)'
 
-function go_get {
+go_get() {
   git_fetch_and_co "feature/MCDNPORTAL-$1" ||
     git_fetch_and_co "bugfix/MCDNPORTAL-$1" ||
     git_fetch_and_co "feature/GCDSEAMS-$1" ||
@@ -40,24 +40,9 @@ function go_get {
 }
 alias gget='go_get'
 
-function git_fetch_and_co {
+git_fetch_and_co() {
   echo "Trying to fetch repo $1..."
   git co $1 || git fetch origin $1 && git co $1
 }
 
-function gac { git aa && git ci -m "$1" }
-
-# not really using these....
-function gdv { git co develop }
-function gfe { git co "feature/MCDNPORTAL-$1" }
-function gbf { git co "bugfix/MCDNPORTAL-$1" }
-function gff {
-  branch="feature/MCDNPORTAL-$1"
-  git fetch origin "$branch"
-  git co "$branch"
-}
-function gfb {
-  branch="bugfix/MCDNPORTAL-$1"
-  git fetch origin "$branch"
-  git co "$branch"
-}
+gac() { git aa && git ci -m "$1" }
