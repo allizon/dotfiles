@@ -27,7 +27,7 @@ alias h='history'
 eval "$(thefuck --alias)"
 
 export neosnippets="cd /Users/alholt/.local/share/nvim/plugged/neosnippet-snippets/neosnippets"
-export st3pack="~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User"
+export st3pack="$HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User"
 
 # Set up external boxes so they're usable!
 function pushprofile {
