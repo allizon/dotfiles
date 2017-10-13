@@ -1,0 +1,31 @@
+global !p
+def fileNameAsClass():
+  components = snip.basename.decode('utf-8').split('_')
+  return ''.join(map(string.capitalize, components))
+endglobal
+
+snippet class "class <class_name> def func ... end end" Ab
+class ${1:class_name}
+  def ${2:method}
+    $0
+  end
+end
+endsnippet
+
+snippet module "Ruby module" Ab
+module ${1:module_name}
+  def ${2:method}
+    $0
+  end
+end
+endsnippet
+
+snippet ?: "Ternary operator" Ab
+${1:(do this if...)} ? ${2:positive} : ${3:negative}
+endsnippet
+
+snippet def "method definition" b
+def ${1:method_name}${2:(${3:args, ...})}
+  $0
+end
+endsnippet

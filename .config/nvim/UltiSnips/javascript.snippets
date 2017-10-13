@@ -1,0 +1,28 @@
+snippet clog "console.log" A
+console.log($0);
+endsnippet
+
+snippet vmount "Create and mount a Vue component for testing"
+const Constructor = Vue.extend(${1:ComponentName});
+const component = new Constructor().$mount();
+endsnippet
+
+snippet kspec "Skeleton for new Karma Vue spec"
+import Vue from 'vue';
+import ${1:ComponentName} from '../../src/$1.vue';
+
+describe('$1.vue', () => {
+  beforeEach(function() {
+
+  });
+
+  afterEach(function() {
+
+  });
+
+  it('Works some magic', () => {
+    const Constructor = Vue.extend($1);
+    const component = new Constructor().$mount();
+  });
+});
+endsnippet

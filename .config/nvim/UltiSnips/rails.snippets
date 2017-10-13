@@ -1,0 +1,55 @@
+extends ruby
+
+snippet rli "Rails.logger.info var" Ab
+Rails.logger.info("ALLI> ${1:${VISUAL:var}}: " + $1.inspect)
+endsnippet
+
+snippet ap "awesome_print var" b
+ap "${1:${VISUAL:var}}: " + $1.inspect
+endsnippet
+
+snippet bp "binding.pry" Ab
+binding.pry
+endsnippet
+
+snippet habtm "has_and_belongs_to_many" A
+has_and_belongs_to_many :${0:model}
+endsnippet
+
+snippet i18n "I18n translate" A
+I18n.t('$0')
+endsnippet
+
+# Testing
+snippet desc "describe [test]"
+describe '$1' do
+  test '$2' do
+    ${0:skip}
+  end
+end
+endsnippet
+
+snippet it "Rspec test"
+it '$1' do
+  ${0:skip}
+end
+endsnippet
+
+snippet test "Rails::MiniTest test"
+test '$1' do
+  ${0:skip}
+end
+endsnippet
+
+snippet testfile "New test file"
+require 'test_helper'
+
+class `!p snip.rv = fileNameAsClass()` < ActiveSupport::TestCase
+  describe '$1' do
+    test '$2' do
+      ${0:skip}
+    end
+  end
+end
+
+endsnippet
