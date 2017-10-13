@@ -25,7 +25,7 @@ let g:ctrlp_match_window_reversed = 0
 """""
 " NERDTree
 let g:NERDTreeQuitOnOpen = 1
-let g:NERDTreeWinSize = 40
+let g:NERDTreeWinSize = 60
 
 
 """""
@@ -38,6 +38,7 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsSnippetDirectories=["/Users/alholt/.config/nvim/UltiSnips"]
 let g:UltiSnipsEditSplit="normal"
 let g:UltiSnipsUsePythonVersion = 2
 

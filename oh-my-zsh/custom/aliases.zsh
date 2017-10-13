@@ -7,11 +7,15 @@ export dropbox="$HOME/Dropbox"
 export txt="$dropbox/@TXT"
 export journal="$txt/journal"
 
+# "today journal"
+jtoday () { gvi $journal/$(date +%Y-%m-%d).md }
+
 alias wow-backup="$dropbox/scripts/wow-backup.zsh"
 alias dot-backup="$dropbox/scripts/backup-to-remote.zsh"
 
 EDITOR='nvim'
 CURRENT_EDITOR='nvim'
+export nvim="$HOME/.config/nvim"
 alias ed="$CURRENT_EDITOR"
 alias gvi="nyaovim"
 

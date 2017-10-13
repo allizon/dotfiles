@@ -2,7 +2,7 @@ export P4CONFIG=".perforce"
 export P4USER="alholt"
 export P4HOST="perforce:1666"
 export P4PORT="rsh:ssh -2 -a -l p4source -q -x p4.source.akamai.com /bin/true"
-export P4EDITOR="vi"
+export P4EDITOR="nvim"
 export P4IGNORE="~/.myp4ignore"
 
 alias sync="p4 sync"

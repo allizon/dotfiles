@@ -1,6 +1,18 @@
 setopt NO_NOMATCH
 
-git_stash_staged() {
+git_branch_id () {
+  branch_name=$(git symbolic-ref --short HEAD)
+  tags=( "feature/" "bugfix/" "release/" )
+  for tag in "$tags[@]"; do
+    branch_name="${branch_name/$tag/}"
+  done
+  echo $branch_name
+}
+
+gac () { git aa && git ci -m "[$(git_branch_id)] $1" }
+gcim () { git ci -m "[$(git_branch_id)] $1" }
+
+git_stash_staged () {
   ##Stash everything temporarily.  Keep staged files, discard everything else after stashing.
   git stash --keep-index
 
@@ -45,4 +57,3 @@ git_fetch_and_co() {
   git co $1 || git fetch origin $1 && git co $1
 }
 
-gac() { git aa && git ci -m "$1" }

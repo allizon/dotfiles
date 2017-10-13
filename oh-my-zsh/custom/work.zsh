@@ -1,4 +1,6 @@
 ### AKAMAI
+export akadocs="$HOME/Documents/Akamai"
+
 alias agent-ext='/usr/bin/ssh-add $HOME/.ssh/external/2017-07-13;'
 alias agent-int='/usr/bin/ssh-add $HOME/.ssh/internal/2017-07-13; /usr/bin/ssh-add $HOME/.ssh/govops_lab_key_v2'
 # alias agent-old='/usr/bin/ssh-add $HOME/.ssh/internal/2016-07-26; /usr/bin/ssh-add $HOME/.ssh/external/2016-03-30'

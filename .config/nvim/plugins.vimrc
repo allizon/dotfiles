@@ -2,6 +2,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'SirVer/ultisnips'
 	Plug 'honza/vim-snippets'
 
+	Plug 'fatih/vim-go'
+
 	Plug 'kien/ctrlp.vim'
 	Plug 'scrooloose/nerdtree'
 	Plug 'tpope/vim-bundler'
@@ -36,7 +38,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'kana/vim-textobj-user'
 	Plug 'nelstrom/vim-textobj-rubyblock'
 	Plug 'freitass/todo.txt-vim'
-	Plug 'elixir-editors/vim-elixir'
+	Plug 'yssl/QFEnter'
 
 	" Completion plugins
 	Plug 'valloric/youcompleteme'

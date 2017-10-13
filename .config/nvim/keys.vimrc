@@ -9,9 +9,6 @@ let mapleader=","
 " Kicks this off in the background so I can keep working while this processes...
 nnoremap <LEADER>ct :Dispatch! make -f ~/code/mcdn-portal/allistuff/Makefile ctags<CR>
 
-" I want this to only be in makrdown docs...
-nnoremap ;m :silent !open -a Marked\ 2.app %<CR>
-
 
 """""
 " General
@@ -19,31 +16,44 @@ nmap <LEADER>v :edit ~/.config/nvim/init.vim<CR>
 nmap <LEADER>S :source ~/.config/nvim/init.vim<CR>
 nmap <LEADER>Ca ggVGy
 
-" Buffers/windows
-nnoremap <LEADER>n :bnext<CR>
-nnoremap <LEADER>m :bprev<CR>
-nmap <LEADER>w <C-W>w
-nmap <LEADER>W <C-W>W
+" Buffers/windows - uses j/k for next/previous
+let mapleader=";"
+nnoremap .b :CtrlPBuffer<CR>
+nnoremap <LEADER>bj :bnext<CR>
+nnoremap <LEADER>bk :bprev<CR>
+nnoremap <LEADER>bd :bdelete<CR>
+nnoremap <LEADER>bx :bdelete<CR>
+nnoremap <LEADER>wj :wincmd w<CR>
+nnoremap <LEADER>wk :wincmd W<CR>
+nnoremap <LEADER>wc :close<CR>
+nnoremap <LEADER>wx :close<CR>
+nnoremap <LEADER>wh :split<CR>
+nnoremap <LEADER>ws :vsplit<CR>
+nnoremap <LEADER>wr <C-W>x
+nnoremap <LEADER>wq :qa<CR>
+let mapleader=","
 
 
 """""
 " NERDTree and CtrlP
 let mapleader=";"
-nmap <LEADER>t   :NERDTreeFind<CR>
-nmap <LEADER>p   :CtrlP<CR>
-nmap <LEADER>b   :CtrlPBuffer<CR>
+nnoremap <LEADER>t :NERDTreeFind<CR>
+nnoremap <LEADER>p :CtrlP<CR>
 let mapleader=","
+
+" Inside NERDTree:
+" 	p: jump to parent directory
+" 	P: jump to root directory
+" 	u: up a parent directory
+" 	C: make the selected directory root
 
 
 """""
 " vim-fugitive (Git wrapper)
-" nmap <LEADER>s   :Gstatus<CR>
-" let mapleader="."
 nnoremap <LEADER>gs :Gstatus<CR>
 nnoremap <LEADER>gd :Gdiff<cr>
 " close git diff window
 nnoremap <LEADER>gx <c-w>h<c-w>c
-" let mapleader=","
 
 
 """""
@@ -61,6 +71,7 @@ vnoremap <silent> <f9> :TREPLSendSelection<cr>
 " Useful maps
 " hide/close terminal
 nnoremap <silent> Th :call neoterm#close()<cr>
+nnoremap <silent> Tx :call neoterm#close()<cr>
 " clear terminal
 nnoremap <silent> Tl :call neoterm#clear()<CR>
 " kills the current job (send a <c-c>)
