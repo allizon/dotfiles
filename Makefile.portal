@@ -1,0 +1,27 @@
+MCDN_PORTAL_NATIVE_SPRING_PATH := /Users/alholt/code/mcdn-portal-native/mcdn-portal-native-spring
+
+spring:
+	rm -rf vendor/cache
+	chmod +w Gemfile*
+	cp ${MCDN_PORTAL_NATIVE_SPRING_PATH}/Gemfile* .
+	cp -R ${MCDN_PORTAL_NATIVE_SPRING_PATH}/vendor/cache/ vendor/cache
+	bundle install
+	bundle exec spring binstub --all
+	spring status
+
+devise:
+	rails test \
+		test/integration/login \
+		test/integration/sessions \
+		test/models/user \
+		test/models/session_manager_test.rb \
+
+tests:
+	rails test \
+		test/controllers \
+		test/models \
+		test/integration \
+		| tee test_output.txt
+
+ctags:
+	ctags -R --languages=ruby --exclude=.git --exclude=log --exclude=node_modules --exclude=dev .
