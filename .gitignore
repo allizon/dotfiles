@@ -3,3 +3,6 @@ compile-cache
 dev
 .npm
 .node-gyp
+
+oh-my-zsh/custom/perforce.zsh
+oh-my-zsh/custom/work.zsh
