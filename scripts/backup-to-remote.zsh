@@ -25,7 +25,7 @@ rm -rf $NEOVIM_TARGET/*
 cp -R $HOME/.config/nvim/* $NEOVIM_TARGET
 
 echo "Copying custom Portal makefile..."
-cp $portal/allistuff/Makefile $DOTFILES_DIR/allistuff/Makefile
+cp $portal/allistuff/Makefile $DOTFILES_DIR/allistuff/Makefile.portal
 
 echo "Copying ZSH files..."
 cd $DOTFILES_DIR
