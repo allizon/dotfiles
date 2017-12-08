@@ -17,15 +17,18 @@ nmap <LEADER>S :source ~/.config/nvim/init.vim<CR>
 nmap <LEADER>Ca ggVGy
 
 " Buffers/windows - uses j/k for next/previous
-let mapleader=";"
-nnoremap .b :CtrlPBuffer<CR>
+nnoremap <LEADER>b :CtrlPBuffer<CR>
+let mapleader="."
 nnoremap <LEADER>bj :bnext<CR>
 nnoremap <LEADER>bk :bprev<CR>
 nnoremap <LEADER>bd :bdelete<CR>
 nnoremap <LEADER>bx :bdelete<CR>
+let mapleader=","
+
+nnoremap <LEADER>w :wincmd w<CR>
+let mapleader=";"
 nnoremap <LEADER>wj :wincmd w<CR>
 nnoremap <LEADER>wk :wincmd W<CR>
-nnoremap <LEADER>wc :close<CR>
 nnoremap <LEADER>wx :close<CR>
 nnoremap <LEADER>wh :split<CR>
 nnoremap <LEADER>ws :vsplit<CR>
@@ -70,12 +73,12 @@ vnoremap <silent> <f9> :TREPLSendSelection<cr>
 
 " Useful maps
 " hide/close terminal
-nnoremap <silent> Th :call neoterm#close()<cr>
-nnoremap <silent> Tx :call neoterm#close()<cr>
+nnoremap <silent> Th :call neoterm#close()<CR>
+nnoremap <silent> Tx :call neoterm#close()<CR>
 " clear terminal
 nnoremap <silent> Tl :call neoterm#clear()<CR>
 " kills the current job (send a <c-c>)
-nnoremap <silent> Tc :call neoterm#kill()<cr>
+nnoremap <silent> Tc :call neoterm#kill()<CR>
 
 " Rails commands
 command! Troutes :T rake routes

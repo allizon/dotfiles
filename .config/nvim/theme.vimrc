@@ -3,5 +3,8 @@
 if (has("termguicolors"))
   set termguicolors
 endif
-colorscheme OceanicNext
+
+" colorscheme OceanicNext
+colorscheme NeoSolarized
+set background=dark
 

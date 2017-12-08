@@ -4,7 +4,7 @@ def fileNameAsClass():
   return ''.join(map(string.capitalize, components))
 endglobal
 
-snippet class "class <class_name> def func ... end end" Ab
+snippet class "class <class_name> def func ... end end" b
 class ${1:class_name}
   def ${2:method}
     $0
@@ -12,7 +12,7 @@ class ${1:class_name}
 end
 endsnippet
 
-snippet module "Ruby module" Ab
+snippet module "Ruby module" b
 module ${1:module_name}
   def ${2:method}
     $0

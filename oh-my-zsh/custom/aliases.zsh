@@ -13,6 +13,9 @@ jtoday () { gvi $journal/$(date +%Y-%m-%d).md }
 alias wow-backup="$dropbox/scripts/wow-backup.zsh"
 alias dot-backup="$dropbox/scripts/backup-to-remote.zsh"
 
+hs () { history | grep $* }
+hclear () { history -c }
+
 EDITOR='nvim'
 CURRENT_EDITOR='nvim'
 export nvim="$HOME/.config/nvim"
@@ -74,3 +77,13 @@ function killit () {
 
 export RUBY_DEP_GEM_SILENCE_WARNINGS=1
 export DISABLE_DATABASE_ENVIRONMENT_CHECK=1
+
+# tmux aliases, maybe bust out to their own file
+alias tma='tmux attach -t'
+alias tmn='tmux new-session -s'
+alias tml='tmux list-sessions'
+alias tmi="tmux -CC"
+alias tai="tmux -CC attach"
+alias tksv='tmux kill-server'
+alias tkss='tmux kill-session -t'
+

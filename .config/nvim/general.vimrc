@@ -6,6 +6,7 @@ set showmatch " Shows matching bracket
 " set nocompatible
 set hidden    " Change buffers without saving
 set cursorline
+set nowrap
 
 set hlsearch          " don't highlight search term
 set incsearch         " DO highlight matches during text completion
@@ -26,9 +27,11 @@ function! ClipboardPaste()
   let @@ = system('pbpaste')
 endfunction
 
+vnoremap <silent> x x:call ClipboardYank()<cr>
 vnoremap <silent> y y:call ClipboardYank()<cr>
 vnoremap <silent> d d:call ClipboardYank()<cr>
-nnoremap <silent> p :call ClipboardPaste()<cr>p
+nnoremap <silent> P :call ClipboardPaste()<cr>p
 
+onoremap <silent> x x:call ClipboardYank()<cr>
 onoremap <silent> y y:call ClipboardYank()<cr>
 onoremap <silent> d d:call ClipboardYank()<cr>

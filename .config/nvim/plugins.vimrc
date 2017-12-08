@@ -2,7 +2,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'SirVer/ultisnips'
 	Plug 'honza/vim-snippets'
 
-	Plug 'fatih/vim-go'
+	" Plug 'fatih/vim-go'
 
 	Plug 'kien/ctrlp.vim'
 	Plug 'scrooloose/nerdtree'
@@ -32,13 +32,15 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'godlygeek/tabular'
 	Plug 'junegunn/vim-easy-align'
 	Plug 'ntpeters/vim-better-whitespace'
-	Plug 'mhartington/oceanic-next'
 	Plug 'mileszs/ack.vim'
 	Plug 'junegunn/goyo.vim'
 	Plug 'kana/vim-textobj-user'
 	Plug 'nelstrom/vim-textobj-rubyblock'
 	Plug 'freitass/todo.txt-vim'
 	Plug 'yssl/QFEnter'
+
+	Plug 'mhartington/oceanic-next'
+	Plug 'icymind/NeoSolarized'
 
 	" Completion plugins
 	Plug 'valloric/youcompleteme'

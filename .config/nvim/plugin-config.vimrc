@@ -71,3 +71,7 @@ let test#strategy="neoterm"
 """""
 " ack
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+"""""
+" Airline
+" let g:airline#extensions#tabline#enabled = 1

@@ -1,5 +1,9 @@
 extends ruby
 
+global !p
+from snippet_helpers import *
+endglobal
+
 snippet rli "Rails.logger.info var" Ab
 Rails.logger.info("ALLI> ${1:${VISUAL:var}}: " + $1.inspect)
 endsnippet
@@ -8,8 +12,21 @@ snippet ap "awesome_print var" b
 ap "${1:${VISUAL:var}}: " + $1.inspect
 endsnippet
 
-snippet bp "binding.pry" Ab
+snippet p! "puts var" Ab
+puts "${1:${VISUAL:var}}: " + $1.inspect
+endsnippet
+
+snippet bb "byebug" Ab
+byebug
+
+endsnippet
+
+snippet bp! "binding.pry" Ab
 binding.pry
+endsnippet
+
+snippet bmark "Benchmark"
+puts Benchmark.measure { ${1:${VISUAL:block}} }
 endsnippet
 
 snippet habtm "has_and_belongs_to_many" A
@@ -44,7 +61,7 @@ endsnippet
 snippet testfile "New test file"
 require 'test_helper'
 
-class `!p snip.rv = fileNameAsClass()` < ActiveSupport::TestCase
+class `!p snip.rv = fileNameAsClass(snip)` < ActiveSupport::TestCase
   describe '$1' do
     test '$2' do
       ${0:skip}
