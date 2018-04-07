@@ -1,11 +1,20 @@
+EDITOR='nvim'
+CURRENT_EDITOR='nvim'
+
+# export GOPATH="/Users/alholt/go"
+# source "$GOPATH/src/github.com/sachaos/todoist/todoist_functions.sh"
+
 export zconf="$HOME/.oh-my-zsh/custom"
 alias ez="$CURRENT_EDITOR $zconf/aliases.zsh"
 alias sz="source ~/.zshrc"
+
+alias goo="~/code/akabin/go"
 
 # Personal convenience scripts
 export dropbox="$HOME/Dropbox"
 export txt="$dropbox/@TXT"
 export journal="$txt/journal"
+export amara="$txt/Creative/Amara"
 
 # "today journal"
 jtoday () { gvi $journal/$(date +%Y-%m-%d).md }
@@ -16,11 +25,10 @@ alias dot-backup="$dropbox/scripts/backup-to-remote.zsh"
 hs () { history | grep $* }
 hclear () { history -c }
 
-EDITOR='nvim'
-CURRENT_EDITOR='nvim'
 export nvim="$HOME/.config/nvim"
 alias ed="$CURRENT_EDITOR"
 alias gvi="nyaovim"
+alias vr="vimr"
 
 alias hyed="bash -c 'exec env ${EDITOR:=nvim} ~/.hyper.js'"
 alias s='subl'
@@ -36,8 +44,8 @@ export st3pack="$HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/Use
 function pushprofile {
   TEMPLATE=~/.profile.template
   TARGET=${1:-lab}
-  scp $TEMPLATE $TARGET:~/.profile
-  pushvimfiles $TARGET
+  scp $TEMPLATE $TARGET:/tmp/.profile
+  # pushvimfiles $TARGET
 }
 
 function pushvimfiles {
@@ -48,6 +56,7 @@ function pushvimfiles {
   ssh $TARGET "mkdir ~/.vim"
   # scp -r $VIM_DIR/* $TARGET:~/.vim
   rsync -q $VIM_DIR $TARGET:~/.vim --exclude "*/.git/*" --exclude "bundle/command-t/data/benchmark.yml"
+  echo "done!"
 }
 
 
@@ -63,7 +72,7 @@ alias pscpu10='ps aux | sort -nr -k 3 | head -10'
 alias df='df -H'
 alias du='du -ch'
 
-alias ll='ls -alFH'
+alias ll='ls -lFH'
 alias la='ls -A'
 alias l='ls -CF'
 alias grep='egrep -irn'
@@ -87,3 +96,4 @@ alias tai="tmux -CC attach"
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
 
+source ~/.cbe-dev.sh

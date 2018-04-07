@@ -1,8 +1,10 @@
 export portal="$HOME/code/mcdn-portal"
+export portal_alt="$HOME/code/mcdn-portal-alt"
 
 alias amake="make -f $portal/allistuff/Makefile"
 
 alias mp="cd $portal"
+alias mpa="cd ${portal_alt}/"
 alias mpn="cd ${portal}-new/"
 alias mpt="cd ${portal}-test/"
 
@@ -12,8 +14,9 @@ alias guard='bundle exec guard'
 alias gz='bundle exec guard -g zeus -c'
 alias gs='bundle exec guard -g spring -c'
 
-alias rc='rails console'
-alias rt='time rails test'
+alias rc='bin/rails console'
+alias rs='bin/rails server'
+alias rt='time bin/rails test'
 alias rtc='rails console test --sandbox'
 
 alias z='zeus'

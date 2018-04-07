@@ -10,3 +10,7 @@ snippet crminor "Code review - minor"
 Code review not needed - minor change
 endsnippet
 
+snippet jira "New JIRA issue for Jeeves slackbot"
+create -s ${1:<1|3|5>} -${2:<E|P|C|O|V>} MCDNPORTAL ${3:<Story|Task|Bug>} ${4:<Summary>}
+${5:<Description>}
+endsnippet

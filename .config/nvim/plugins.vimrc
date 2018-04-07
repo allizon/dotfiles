@@ -38,8 +38,12 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'nelstrom/vim-textobj-rubyblock'
 	Plug 'freitass/todo.txt-vim'
 	Plug 'yssl/QFEnter'
+	Plug 'blindFS/vim-taskwarrior'
+	Plug 'rainerborene/vim-reek'
 
-	Plug 'mhartington/oceanic-next'
+	Plug 'rafi/awesome-vim-colorschemes'
+	Plug 'fenetikm/falcon'
+	" Plug 'mhartington/oceanic-next'
 	Plug 'icymind/NeoSolarized'
 
 	" Completion plugins
@@ -51,6 +55,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 	" Javascript
 	Plug 'pangloss/vim-javascript'
-	Plug 'posva/vim-vue'
+	" Plug 'posva/vim-vue'
 call plug#end()
 

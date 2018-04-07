@@ -30,7 +30,7 @@ endfunction
 vnoremap <silent> x x:call ClipboardYank()<cr>
 vnoremap <silent> y y:call ClipboardYank()<cr>
 vnoremap <silent> d d:call ClipboardYank()<cr>
-nnoremap <silent> P :call ClipboardPaste()<cr>p
+nnoremap <silent> Y :call ClipboardPaste()<cr>p
 
 onoremap <silent> x x:call ClipboardYank()<cr>
 onoremap <silent> y y:call ClipboardYank()<cr>

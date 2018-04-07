@@ -5,6 +5,7 @@
 augroup pencil
   autocmd!
   autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft'})
+  autocmd BufEnter *md,*.mkd    call pencil#init({'wrap': 'soft'})
   autocmd FileType text         call pencil#init()
   autocmd BufRead  todo.txt     :PFormatOff
 augroup END
@@ -45,7 +46,7 @@ let g:UltiSnipsUsePythonVersion = 2
 
 """""
 " NeoTerm
-let g:neoterm_position = 'horizontal'
+" let g:neoterm_position = 'horizontal'
 let g:neoterm_automap_keys = ',tt'
 let g:neoterm_keep_term_open = 0
 
@@ -71,6 +72,12 @@ let test#strategy="neoterm"
 """""
 " ack
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+
+"""""
+" vim-reek
+let g:reek_on_loading = 0
+let g:reek_alwyas_show = 0
 
 """""
 " Airline

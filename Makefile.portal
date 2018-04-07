@@ -1,13 +1,30 @@
-MCDN_PORTAL_NATIVE_SPRING_PATH := /Users/alholt/code/mcdn-portal-native/mcdn-portal-native-spring
+MCDN_PORTAL_NATIVE_CUSTOM_PATH := /Users/alholt/code/mcdn-portal-native/mcdn-portal-native-custom
 
-spring:
+custom:
 	rm -rf vendor/cache
 	chmod +w Gemfile*
-	cp ${MCDN_PORTAL_NATIVE_SPRING_PATH}/Gemfile* .
-	cp -R ${MCDN_PORTAL_NATIVE_SPRING_PATH}/vendor/cache/ vendor/cache
+	cp ${MCDN_PORTAL_NATIVE_CUSTOM_PATH}/Gemfile* .
+	cp ${MCDN_PORTAL_NATIVE_CUSTOM_PATH}/Guardfile .
+	cp -R ${MCDN_PORTAL_NATIVE_CUSTOM_PATH}/vendor/cache/ vendor/cache
 	bundle install
-	bundle exec spring binstub --all
-	spring status
+	# bundle exec spring binstub --all
+	# spring status
+	# REEK=1 guard -G ${MCDN_PORTAL_NATIVE_CUSTOM_PATH}/Guardfile --clear
+	REEK=1 guard --clear
+
+pull_develop:
+	git checkout develop
+	git pull origin develop
+
+merge_develop:
+	git fetch origin develop
+	git merge FETCH_HEAD
+
+mp1790:
+	rails test \
+		test/integration/user/create_user_test.rb \
+		test/integration/sso/session_test.rb:358 \
+		test/controllers/sso/sessions_controller_test.rb:358
 
 devise:
 	rails test \
@@ -25,3 +42,15 @@ tests:
 
 ctags:
 	ctags -R --languages=ruby --exclude=.git --exclude=log --exclude=node_modules --exclude=dev .
+
+testtarget: dependency2 dependency3 dependency1
+	echo $@
+
+dependency1:
+	echo $@
+
+dependency2: dependency1
+	echo $@
+
+dependency3:
+	echo $@

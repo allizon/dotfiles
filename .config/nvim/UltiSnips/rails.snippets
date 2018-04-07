@@ -29,6 +29,27 @@ snippet bmark "Benchmark"
 puts Benchmark.measure { ${1:${VISUAL:block}} }
 endsnippet
 
+snippet concern "New concern setup"
+module ${1:ConcernName}
+  extend ActiveSupport::Concern
+
+  included do
+    $0
+  end
+
+  def method_name
+
+  end
+
+  class_methods do
+    def method_name
+
+    end
+  end
+end
+
+endsnippet
+
 snippet habtm "has_and_belongs_to_many" A
 has_and_belongs_to_many :${0:model}
 endsnippet
@@ -58,12 +79,20 @@ test '$1' do
 end
 endsnippet
 
-snippet testfile "New test file"
+snippet testcase
+ActiveSupport:TestCase
+endsnippet
+
+snippet integration_test
+ActionDispatch::IntegrationTest
+endsnippet
+
+snippet testfile "New file - ActiveSupport:TestCase"
 require 'test_helper'
 
-class `!p snip.rv = fileNameAsClass(snip)` < ActiveSupport::TestCase
-  describe '$1' do
-    test '$2' do
+class `!p snip.rv = fileNameAsClass(snip)` < ${1:ActiveSupport::TestCase}
+  describe '$2' do
+    test '$3' do
       ${0:skip}
     end
   end

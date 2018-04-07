@@ -1,15 +1,27 @@
 # == Todo.txt Stuff
-alias t="clear && todo.sh"
-alias ta="clear && todo.sh add"
-alias tf="clear && todo.sh ls"
-alias today="clear && todo.sh ls @today"
-alias tak="clear && todo.sh ls @aka"
+alias t="clear && task"
+alias tl="t long"
+alias ta="t add"
+alias tc="t calendar"
+alias tm="t modify"
+alias tbd="t burndown.daily"
+alias tbm="t burndown.monthly"
+alias tbw="t burndown.weekly"
+alias tak="t project:akamai"
 
 taa () {
-  todo.sh add "[@aka][$(git_branch_id)] $1"
+  task add project:akamai [$(git_branch_id)] $1
 }
 
 tj () {
   clear
-  todo.sh ls $(git_branch_id)
+  task $(git_branch_id)
+}
+
+tpush () {
+  current_dir=$(pwd)
+  cd ~/.task
+  gac "Task backup"
+  g push origin master
+  cd $current_dir
 }

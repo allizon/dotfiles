@@ -53,10 +53,11 @@ let mapleader=","
 
 """""
 " vim-fugitive (Git wrapper)
-nnoremap <LEADER>gs :Gstatus<CR>
-nnoremap <LEADER>gd :Gdiff<cr>
+let mapleader="."
+nnoremap <silent> <LEADER>gs :Gstatus<CR>
+nnoremap <silent> <LEADER>gd :Gdiff<cr>
 " close git diff window
-nnoremap <LEADER>gx <c-w>h<c-w>c
+nnoremap <silent> <LEADER>gx <c-w>h<c-w>c
 
 
 """""
@@ -73,12 +74,14 @@ vnoremap <silent> <f9> :TREPLSendSelection<cr>
 
 " Useful maps
 " hide/close terminal
-nnoremap <silent> Th :call neoterm#close()<CR>
-nnoremap <silent> Tx :call neoterm#close()<CR>
+nnoremap <silent> Th :Tclose<CR>
+nnoremap <silent> Tx :Tclose<CR>
 " clear terminal
-nnoremap <silent> Tl :call neoterm#clear()<CR>
+nnoremap <silent> Tl :Tclear<CR>
 " kills the current job (send a <c-c>)
-nnoremap <silent> Tc :call neoterm#kill()<CR>
+nnoremap <silent> Tc :Tkill<CR>
+nnoremap <silent> Tr :TestNearest<CR>
+nnoremap <silent> Tp :TestLast<CR>
 
 " Rails commands
 command! Troutes :T rake routes
@@ -117,3 +120,8 @@ nmap ga <Plug>(EasyAlign)
 """""
 " ack.vim
 nmap <LEADER>a :Ack <C-r><C-W><CR>
+
+
+"""""
+" vim-taskwarrior
+nnoremap <silent> Tw :TW<CR>

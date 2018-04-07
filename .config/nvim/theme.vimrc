@@ -5,6 +5,9 @@ if (has("termguicolors"))
 endif
 
 " colorscheme OceanicNext
-colorscheme NeoSolarized
-set background=dark
+" colorscheme NeoSolarized
+" set background=dark
 
+colorscheme afterglow " ***
+" colorscheme falcon " ***
+" colorscheme termschool " ***
