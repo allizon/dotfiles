@@ -5,7 +5,7 @@ from snippet_helpers import *
 endglobal
 
 snippet rli "Rails.logger.info var" Ab
-Rails.logger.info("ALLI> ${1:${VISUAL:var}}: " + $1.inspect)
+Rails.logger.info('ALLI> ${1:${VISUAL:var}}: ' + $1.inspect)
 endsnippet
 
 snippet ap "awesome_print var" b
@@ -59,7 +59,7 @@ I18n.t('$0')
 endsnippet
 
 # Testing
-snippet desc "describe [test]"
+snippet desc "describe [test]" Ab
 describe '$1' do
   test '$2' do
     ${0:skip}
@@ -73,10 +73,17 @@ it '$1' do
 end
 endsnippet
 
-snippet test "Rails::MiniTest test"
+snippet test "Rails::MiniTest test" Ab
 test '$1' do
   ${0:skip}
 end
+endsnippet
+
+snippet setup "setup block" Ab
+setup do
+  ${0}
+end
+
 endsnippet
 
 snippet testcase

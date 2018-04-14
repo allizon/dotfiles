@@ -42,6 +42,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'rainerborene/vim-reek'
 
 	Plug 'rafi/awesome-vim-colorschemes'
+	Plug 'soft-aesthetic/soft-era-vim'
 	Plug 'fenetikm/falcon'
 	" Plug 'mhartington/oceanic-next'
 	Plug 'icymind/NeoSolarized'

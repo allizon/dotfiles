@@ -97,3 +97,5 @@ alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
 
 source ~/.cbe-dev.sh
+
+export PATH="~/Library/Python/3.6/bin:${PATH}"

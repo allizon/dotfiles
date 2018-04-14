@@ -1,7 +1,7 @@
 export portal="$HOME/code/mcdn-portal"
 export portal_alt="$HOME/code/mcdn-portal-alt"
 
-alias amake="make -f $portal/allistuff/Makefile"
+alias amake="make -f ~/allistuff/Makefile"
 
 alias mp="cd $portal"
 alias mpa="cd ${portal_alt}/"

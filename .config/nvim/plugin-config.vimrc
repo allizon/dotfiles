@@ -41,7 +41,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsSnippetDirectories=["/Users/alholt/.config/nvim/UltiSnips"]
 let g:UltiSnipsEditSplit="normal"
-let g:UltiSnipsUsePythonVersion = 2
+let g:UltiSnipsUsePythonVersion = 3
 
 
 """""
@@ -82,3 +82,4 @@ let g:reek_alwyas_show = 0
 """""
 " Airline
 " let g:airline#extensions#tabline#enabled = 1
+" let g:airline_theme = 'softera'

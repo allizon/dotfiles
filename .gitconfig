@@ -50,7 +50,8 @@
 	fl = log -u
 	gr = log --oneline --graph --decorate
 	ir = !git rebase -i origin/master
-	l = log --oneline
+	; l = log --oneline
+	l = log --graph --pretty=format:'%C(bold black)%h%Creset %C(yellow)%d%Creset - %s %Cgreen(%cr) %C(bold blue)<%aN>%Creset' --abbrev-commit --
 	lg = log --oneline --graph --decorate
 	; ls = show --pretty="format:" --name-only
 	; ls = diff-tree --no-commit-id --name-only -r
