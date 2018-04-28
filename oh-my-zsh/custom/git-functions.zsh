@@ -1,39 +1,12 @@
 setopt NO_NOMATCH
 
-git_branch_id () {
-  branch_name=$(git symbolic-ref --short HEAD)
-  tags=( "feature/" "bugfix/" "release/" )
-  for tag in "$tags[@]"; do
-    branch_name="${branch_name/$tag/}"
-  done
-  echo $branch_name
-}
+autoload -U git_branch_id
+autoload -U git_stash_staged
 
 gac () { git aa && git ci -m "[$(git_branch_id)] $1" }
 gcim () { git ci -m "[$(git_branch_id)] $1" }
 
-git_stash_staged () {
-  ##Stash everything temporarily.  Keep staged files, discard everything else after stashing.
-  git stash --keep-index
-
-  #Stash everything that remains (only the staged files should remain)  This is the stash we want to keep, so give it a name.
-  git stash save "$1"
-
-  #Apply the original stash to get us back to where we started.
-  git stash apply stash@{1}
-
-  #Create a temporary patch to reverse the originally staged changes and apply it
-  git stash show -p | git apply -R
-
-  #Delete the temporary stash
-  git stash drop stash@{1}
-  clear
-  git stash list
-  echo
-  git status
-}
 alias gss="git_stash_staged"
-
 alias gst='clear && git status'
 alias gstash='git aa && git stash save ' $1
 alias push='git push origin HEAD'
@@ -48,7 +21,7 @@ go_get() {
     git_fetch_and_co "bugfix/GCDSEAMS-$1" ||
     git_fetch_and_co "release/$1"
   # rake db:migrate
-  g pull
+  git pull
 }
 alias gget='go_get'
 

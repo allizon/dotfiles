@@ -44,6 +44,7 @@
 	co = checkout
 	cb = checkout -b
 	d = diff --ignore-all-space
+	dr = push origin --delete
 	dt = difftool --ignore-all-space
 	dc = diff --cached
 	filelog = log -u

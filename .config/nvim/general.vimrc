@@ -11,7 +11,7 @@ set nowrap
 set hlsearch          " don't highlight search term
 set incsearch         " DO highlight matches during text completion
 nmap \q :nohlsearch<CR>
-nnoremap <CR> :nohlsearch<CR>
+" nnoremap <CR> :nohlsearch<CR>
 
 filetype plugin indent on
 set autowrite
@@ -35,3 +35,10 @@ nnoremap <silent> Y :call ClipboardPaste()<cr>p
 onoremap <silent> x x:call ClipboardYank()<cr>
 onoremap <silent> y y:call ClipboardYank()<cr>
 onoremap <silent> d d:call ClipboardYank()<cr>
+
+" Command Window improvements
+" nnoremap : q:i
+nnoremap / q/i
+nnoremap ? q?i
+autocmd CmdwinEnter * nnoremap <buffer> <F5> :let g:CmdWindowLineMark=line(".")<CR><CR>q::execute "normal ".g:CmdWindowLineMark."G"<CR>
+" autocmd CmdwinEnter * nnoremap <buffer> qq <C-c>

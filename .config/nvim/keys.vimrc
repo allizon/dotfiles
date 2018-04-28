@@ -3,12 +3,14 @@
 
 let mapleader=","
 
-
 """""
 " Dispatch/Make/Shell commands
 " Kicks this off in the background so I can keep working while this processes...
 nnoremap <LEADER>ct :Dispatch! make -f ~/code/mcdn-portal/allistuff/Makefile ctags<CR>
 
+" easier to reach "99" than "shift-ZZ"
+nnoremap 99 ZZ
+nnoremap Q :q!<CR>
 
 """""
 " General
@@ -17,24 +19,23 @@ nmap <LEADER>S :source ~/.config/nvim/init.vim<CR>
 nmap <LEADER>Ca ggVGy
 
 " Buffers/windows - uses j/k for next/previous
-nnoremap <LEADER>b :CtrlPBuffer<CR>
-let mapleader="."
-nnoremap <LEADER>bj :bnext<CR>
-nnoremap <LEADER>bk :bprev<CR>
-nnoremap <LEADER>bd :bdelete<CR>
-nnoremap <LEADER>bx :bdelete<CR>
-let mapleader=","
+nnoremap B :CtrlPBuffer<CR>
+nnoremap <F5>    :b#<CR>
+nnoremap <TAB>   :bnext<CR>
+nnoremap <S-TAB> :bprev<CR>
+nnoremap <C-x>   :bdelete<CR>
 
-nnoremap <LEADER>w :wincmd w<CR>
+" nnoremap <LEADER>w :wincmd w<CR>
+" nnoremap <LEADER>wj :wincmd w<CR>
+" nnoremap <LEADER>wk :wincmd W<CR>
 let mapleader=";"
-nnoremap <LEADER>wj :wincmd w<CR>
-nnoremap <LEADER>wk :wincmd W<CR>
-nnoremap <LEADER>wx :close<CR>
+nnoremap <LEADER>wn :wincmd w<CR>
+nnoremap <LEADER>wp :wincmd W<CR>
+nnoremap <LEADER>wc :close<CR>
 nnoremap <LEADER>wh :split<CR>
-nnoremap <LEADER>ws :vsplit<CR>
+nnoremap <LEADER>wv :vsplit<CR>
 nnoremap <LEADER>wr <C-W>x
 nnoremap <LEADER>wq :qa<CR>
-let mapleader=","
 
 
 """""
@@ -52,12 +53,21 @@ let mapleader=","
 
 
 """""
-" vim-fugitive (Git wrapper)
-let mapleader="."
+" vim-fugitive (Git wrapper) and vim-gitgutter
+let mapleader=";"
 nnoremap <silent> <LEADER>gs :Gstatus<CR>
 nnoremap <silent> <LEADER>gd :Gdiff<cr>
+" nnoremap <silent> <LEADER>dg :diffget<cr>
+" nnoremap <silent> <LEADER>dp :diffput<cr>
 " close git diff window
 nnoremap <silent> <LEADER>gx <c-w>h<c-w>c
+
+nmap )h <Plug>GitGutterNextHunk
+nmap (h <Plug>GitGutterPrevHunk
+nmap <Leader>ha <Plug>GitGutterStageHunk
+nmap <Leader>hr <Plug>GitGutterUndoHunk
+nmap <Leader>ht <Plug>GitGutterLineHighlightsToggle
+nmap <Leader>hv <Plug>GitGutterPreviewHunk
 
 
 """""
@@ -82,6 +92,7 @@ nnoremap <silent> Tl :Tclear<CR>
 nnoremap <silent> Tc :Tkill<CR>
 nnoremap <silent> Tr :TestNearest<CR>
 nnoremap <silent> Tp :TestLast<CR>
+nnoremap <silent> Tt :T <up><CR>
 
 " Rails commands
 command! Troutes :T rake routes
@@ -91,13 +102,12 @@ command! Tmigrate :T rake db:migrate
 
 """""
 " vim-test
-let mapleader="."
+let mapleader=";"
 nmap <silent> <LEADER>r :TestNearest<CR>
 nmap <silent> <LEADER>R :TestFile<CR>
 nmap <silent> <LEADER>a :TestSuite<CR>
 nmap <silent> <LEADER>l :TestLast<CR>
-nmap <silent> <LEADER>g :TestVisit<CR>
-let mapleader=","
+" nmap <silent> <LEADER>g :TestVisit<CR>
 
 
 """""
@@ -124,4 +134,4 @@ nmap <LEADER>a :Ack <C-r><C-W><CR>
 
 """""
 " vim-taskwarrior
-nnoremap <silent> Tw :TW<CR>
+" nnoremap <silent> Tw :TW<CR>

@@ -6,7 +6,7 @@ CURRENT_EDITOR='nvim'
 
 export zconf="$HOME/.oh-my-zsh/custom"
 alias ez="$CURRENT_EDITOR $zconf/aliases.zsh"
-alias sz="source ~/.zshrc"
+alias sz="exec zsh"
 
 alias goo="~/code/akabin/go"
 
@@ -27,7 +27,7 @@ hclear () { history -c }
 
 export nvim="$HOME/.config/nvim"
 alias ed="$CURRENT_EDITOR"
-alias gvi="nyaovim"
+alias gvi="vimr"
 alias vr="vimr"
 
 alias hyed="bash -c 'exec env ${EDITOR:=nvim} ~/.hyper.js'"

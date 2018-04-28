@@ -16,17 +16,24 @@ augroup END
 " let g:ctrlp_root_markers=["Gemfile", "Rakefile"]
 let g:ctrlp_custom_ignore = '\.git$\|\vendor/*|\.sass-cache/*|\.meteor/*|output/*|build/*|node_modules/*|tmp/*|public/uploads/*|doc/*'
 " let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_bottom = 1
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_by_filename = 1
 " set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 
 """""
 " NERDTree
 let g:NERDTreeQuitOnOpen = 1
-let g:NERDTreeWinSize = 60
+let g:NERDTreeWinSize = 80
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeAutoDeleteBuffer = 1
+
+" Close NERDTree if it's the last buffer open
+" autocmd bufenter * if (winnr(“$”) == 1 && exists(“b:NERDTreeType”) && b:NERDTreeType == “primary”) | q | endif
 
 
 """""
@@ -45,10 +52,16 @@ let g:UltiSnipsUsePythonVersion = 3
 
 
 """""
+" vim-gitgutter
+let g:gitgutter_highlight_lines = 0
+
+
+"""""
 " NeoTerm
 " let g:neoterm_position = 'horizontal'
 let g:neoterm_automap_keys = ',tt'
 let g:neoterm_keep_term_open = 0
+let g:neoterm_default_mod = 'botright'
 
 
 """""
@@ -78,6 +91,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " vim-reek
 let g:reek_on_loading = 0
 let g:reek_alwyas_show = 0
+
 
 """""
 " Airline

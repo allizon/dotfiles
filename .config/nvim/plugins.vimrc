@@ -11,6 +11,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'tpope/vim-dispatch'
 	Plug 'tpope/vim-endwise'
 	Plug 'tpope/vim-fugitive'
+	Plug 'tpope/vim-unimpaired'
 	Plug 'tpope/vim-markdown'
 	Plug 'tpope/vim-obsession'
 	Plug 'tpope/vim-rails'
@@ -36,26 +37,24 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'junegunn/goyo.vim'
 	Plug 'kana/vim-textobj-user'
 	Plug 'nelstrom/vim-textobj-rubyblock'
-	Plug 'freitass/todo.txt-vim'
+	" Plug 'freitass/todo.txt-vim'
 	Plug 'yssl/QFEnter'
-	Plug 'blindFS/vim-taskwarrior'
+	" Plug 'blindFS/vim-taskwarrior'
 	Plug 'rainerborene/vim-reek'
 
+	" Colorschemes
 	Plug 'rafi/awesome-vim-colorschemes'
 	Plug 'soft-aesthetic/soft-era-vim'
 	Plug 'fenetikm/falcon'
 	" Plug 'mhartington/oceanic-next'
-	Plug 'icymind/NeoSolarized'
+	" Plug 'icymind/NeoSolarized'
+	Plug 'lifepillar/vim-solarized8'
 
 	" Completion plugins
 	Plug 'valloric/youcompleteme'
-	" Plug 'Shougo/neocomplete'
-	" Plug 'Shougo/neosnippet'
-	" Plug 'Shougo/neosnippet-snippets'
-	" Plug 'Shougo/context_filetype.vim'
 
 	" Javascript
 	Plug 'pangloss/vim-javascript'
-	" Plug 'posva/vim-vue'
+	Plug 'posva/vim-vue'
 call plug#end()
 

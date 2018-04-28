@@ -38,7 +38,7 @@ alias pg='pgcli portal'
 
 function ztest() {
   CODE_DIR='/Users/alholt/code/mcdn-portal'
-  RUBY_CMD='/Users/alholt/.rvm/rubies/ruby-2.2.5/bin/ruby'
+  # RUBY_CMD='/Users/alholt/.rvm/rubies/ruby-2.2.5/bin/ruby'
   ZEUS_BIN="$CODE_DIR/bin/zeus"
   TEST_DIR="$CODE_DIR/test"
   $RUBY_CMD -Itest $ZEUS_BIN test $CODE_DIR/$1

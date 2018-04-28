@@ -13,4 +13,7 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " colorscheme afterglow " ***
 " colorscheme falcon " ***
 " colorscheme termschool " ***
-colorscheme tender " ***
+" colorscheme tender " ***
+
+set background=dark
+colorscheme solarized8

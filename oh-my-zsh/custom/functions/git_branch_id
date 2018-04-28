@@ -1,0 +1,7 @@
+branch_name=$(git symbolic-ref --short HEAD)
+tags=( "feature/" "bugfix/" "release/" )
+for tag in "$tags[@]"; do
+  branch_name="${branch_name/$tag/}"
+done
+echo $branch_name
+
