@@ -1,0 +1,2 @@
+echo "Trying to fetch repo $1..."
+git co $1 || git fetch origin $1 && git co $1

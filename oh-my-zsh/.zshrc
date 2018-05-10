@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/alholt/.oh-my-zsh
+export EDITOR=vi
 
 source /Users/alholt/antigen.zsh
 
@@ -12,9 +13,9 @@ antigen bundle zsh-users/zsh-completions src
 
 # antigen theme robbyrussell
 # antigen theme refined
-# antigen theme af-magic
+antigen theme af-magic
 # antigen theme avit
-antigen theme frisk
+# antigen theme frisk
 # antigen theme mrtazz
 # antigen theme pygmalion
 
@@ -104,3 +105,4 @@ git_prompt_string() {
 
 export PATH="/usr/local/opt/php@7.1/bin:$PATH"
 export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
+source ~/.bin/tmuxinator.zsh

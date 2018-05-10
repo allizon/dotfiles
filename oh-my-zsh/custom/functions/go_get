@@ -1,0 +1,6 @@
+git_fetch_and_co "feature/MCDNPORTAL-$1" ||
+  git_fetch_and_co "bugfix/MCDNPORTAL-$1" ||
+  git_fetch_and_co "feature/GCDSEAMS-$1" ||
+  git_fetch_and_co "bugfix/GCDSEAMS-$1" ||
+  git_fetch_and_co "release/$1"
+git pull

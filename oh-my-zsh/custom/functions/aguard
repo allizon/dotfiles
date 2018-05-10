@@ -1,0 +1,3 @@
+autoload load_custom_gemfile; load_custom_gemfile
+bundle exec spring binstub --all
+REEK=1 guard --clear

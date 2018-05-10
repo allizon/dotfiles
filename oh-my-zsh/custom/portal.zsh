@@ -1,3 +1,8 @@
+autoload -U load_custom_gemfile
+autoload -U aguard
+
+alias lcg="load_custom_gemfile"
+
 export portal="$HOME/code/mcdn-portal"
 export portal_alt="$HOME/code/mcdn-portal-alt"
 

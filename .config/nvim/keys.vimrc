@@ -62,8 +62,8 @@ nnoremap <silent> <LEADER>gd :Gdiff<cr>
 " close git diff window
 nnoremap <silent> <LEADER>gx <c-w>h<c-w>c
 
-nmap )h <Plug>GitGutterNextHunk
-nmap (h <Plug>GitGutterPrevHunk
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
 nmap <Leader>ha <Plug>GitGutterStageHunk
 nmap <Leader>hr <Plug>GitGutterUndoHunk
 nmap <Leader>ht <Plug>GitGutterLineHighlightsToggle

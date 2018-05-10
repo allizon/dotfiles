@@ -1,0 +1,10 @@
+MCDN_PORTAL_NATIVE_CUSTOM_PATH="/Users/alholt/code/mcdn-portal-native/mcdn-portal-native-custom"
+
+cd ~/code/mcdn-portal
+rm -rf vendor/cache
+chmod +w Gemfile*
+cp ${MCDN_PORTAL_NATIVE_CUSTOM_PATH}/Gemfile* .
+cp ${MCDN_PORTAL_NATIVE_CUSTOM_PATH}/Guardfile .
+cp -R ${MCDN_PORTAL_NATIVE_CUSTOM_PATH}/vendor/cache/ vendor/cache
+bundle install
+

@@ -1,6 +1,10 @@
 " Any settings or configuration that don't really belong anywhere else can
 " live here.
 
+if &shell =~# 'fish$'
+  set shell=zsh
+endif
+
 set number
 set showmatch " Shows matching bracket
 " set nocompatible
@@ -18,6 +22,9 @@ set autowrite
 
 " vim-better-whitespace
 autocmd BufEnter * EnableStripWhitespaceOnSave
+
+autocmd BufEnter *.md SoftPencil
+autocmd BufEnter *.md set expandtab
 
 " Clipboard integration
 function! ClipboardYank()

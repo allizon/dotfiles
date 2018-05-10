@@ -11,6 +11,9 @@ ZSH_SOURCE="$HOME/.oh-my-zsh"
 VIM_SOURCE="$HOME/.vim/"
 NEOVIM_TARGET="$DOTFILES_DIR/.config/nvim/"
 
+FISH_TARGET="$DOTFILES_DIR/fish"
+FISH_SOURCE="$HOME/.config/fish"
+
 ATOM_SOURCE="$HOME/.atom/"
 SUBLIME_SOURCE="$HOME/Library/Application Support/Sublime Text 3/Packages/User/"
 
@@ -32,6 +35,10 @@ cd $DOTFILES_DIR
 rm -rf $ZSH_TARGET/custom/*
 cp -R $ZSH_SOURCE/custom/* $ZSH_TARGET/custom/
 cp $HOME/.zshrc $ZSH_TARGET
+
+echo "Copying fish files..."
+cp -R $FISH_SOURCE/* $FISH_TARGET/
+# cp $HOME/.fishrc $FISH_TARGET
 
 echo "Pushing to remote..."
 git aa && git ci -m $BACKUP_STRING && git push gh

@@ -36,11 +36,13 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'mileszs/ack.vim'
 	Plug 'junegunn/goyo.vim'
 	Plug 'kana/vim-textobj-user'
+	Plug 'dag/vim-fish'
 	Plug 'nelstrom/vim-textobj-rubyblock'
 	" Plug 'freitass/todo.txt-vim'
 	Plug 'yssl/QFEnter'
 	" Plug 'blindFS/vim-taskwarrior'
 	Plug 'rainerborene/vim-reek'
+	Plug 'yegappan/greplace'
 
 	" Colorschemes
 	Plug 'rafi/awesome-vim-colorschemes'
@@ -55,6 +57,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 	" Javascript
 	Plug 'pangloss/vim-javascript'
-	Plug 'posva/vim-vue'
+	Plug 'mxw/vim-jsx'
+	Plug 'mlaursen/vim-react-snippets'
+	" Plug 'posva/vim-vue'
 call plug#end()
 
